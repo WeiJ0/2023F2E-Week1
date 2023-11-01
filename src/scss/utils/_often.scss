@@ -1,0 +1,37 @@
+@mixin maxLine($line) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin before() {
+  &:before {
+    position: absolute;
+    content: "";
+    @content;
+  }
+}
+
+@mixin after() {
+  &:after {
+    position: absolute;
+    content: "";
+    @content;
+  }
+}
+
+@mixin hover {
+  @include media(-1201) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin fontSet($fontSize: 1rem, $fontWeight: 400, $lineHeight: $fontSize) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: #{$lineHeight / $fontSize};
+}

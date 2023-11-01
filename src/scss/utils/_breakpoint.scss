@@ -1,0 +1,12 @@
+@mixin media($width) {
+  $positive: abs($width);
+  @if ($width < 0) {
+    @media (min-width: #{$positive}px) {
+      @content;
+    }
+  } @else {
+    @media (max-width: #{$positive}px) {
+      @content;
+    }
+  }
+}
