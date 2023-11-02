@@ -1,35 +1,385 @@
 @import "utils/reset";
 @import "utils/breakpoint";
 @import "utils/often";
+@import "utils/setting";
 
-$primaryColor: #da7d4a;
-$textColor: #334155;
-$textSecondaryColor: #94a3b8;
-$bgColor: #fdfcfb;
-$bgSecondaryColor: #f7ece1;
+//common
 
-%mainGradient {
-  background: linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
-  background: -webkit-linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
+.blockTitle {
+  background-color: $textColor;
+  border-radius: 16px;
+  color: #fff;
+  height: fit-content;
+  padding: 8px 12px;
+  width: fit-content;
+  @include fontSet(1rem, 700, 1.18rem);
 }
 
-@font-face {
-  font-family: "Mantou";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../assets/MantouSans-Regular.ttf") format("truetype");
+.gradientTitle {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  @include fontSet(4rem, 400, 5.8rem);
+  @extend %fontMantou;
+  @extend %mainGradient;
 }
 
-%fontMantou {
-  font-family: "Mantou", sans-serif;
+.btn {
+  align-items: center;
+  background-color: #f1f5f9;
+  border-radius: 500px;
+  color: $textColor;
+  display: flex;
+  padding: 22.5px 24px;
+  width: fit-content;
+  @include fontSet(1rem, 600, 1rem);
+
+  .arrow {
+    height: 20px;
+    margin-left: 12px;
+    object-fit: contain;
+    width: 20px;
+  }
+
+  &-2 {
+    background-color: #fff;
+  }
 }
 
-%fontEn {
-  font-family: "Inter", sans-serif;
+.shareBox {
+  align-items: center;
+  display: flex;
+
+  span {
+    color: $textColor;
+    margin-right: 16px;
+    @include fontSet(1rem, 400, 1.5rem);
+  }
+}
+
+.module {
+  &Mask {
+    background-color: rgba($textColor, 0.35);
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    width: 100vw;
+    z-index: 99;
+
+    &.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &Box {
+    background-color: #fff;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    padding: 48px;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    &.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &Head {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    padding: 0 48px;
+  }
+
+  &Title {
+    color: $textColor;
+    @include fontSet(2rem, 700, 2rem);
+  }
+
+  &Close {
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+
+    img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &Content {
+    display: flex;
+    max-height: 650px;
+    overflow-y: auto;
+    padding: 48px;
+
+    .leftBox {
+      margin-right: 32px;
+
+      .imgBox {
+        margin-bottom: 16px;
+      }
+
+      .text {
+        color: $textColor;
+        margin-bottom: 8px;
+        @include fontSet(0.875rem, 400, 1.3rem);
+      }
+
+      .date {
+        color: $textSecondaryColor;
+        margin-bottom: 8px;
+        @include fontSet(0.875rem, 400, 1.3rem);
+      }
+
+      .socialBox {
+        display: flex;
+        li {
+          &:not(:last-child) {
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+
+    .rightBox {
+      .title {
+        color: $primaryColor;
+        margin-bottom: 32px;
+        @include fontSet(2rem, 700, 2rem);
+      }
+
+      .subtitle {
+        color: $textColor;
+        margin-bottom: 8px;
+        @include fontSet(1.25rem, 700, 1.5rem);
+
+        + .desc {
+          margin-bottom: 24px;
+        }
+      }
+
+      .date {
+        color: $textSecondaryColor;
+        margin-bottom: 40px;
+        @include fontSet(0.875rem, 400, 1.3rem);
+      }
+
+      .desc {
+        color: $textColor;
+        @include fontSet(1rem, 400, 1.5rem);
+      }
+
+      .more {
+        &Box {
+          background-color: #f8fafc;
+          border-radius: 12px;
+          margin-top: 96px;
+          padding: 16px;
+        }
+
+        &Title {
+          color: $textColor;
+          margin-bottom: 16px;
+          @include fontSet(1rem, 600, 1.25rem);
+        }
+
+        &List {
+          display: flex;
+        }
+
+        &Item {
+          width: calc(100% / 3);
+
+          &:not(:last-child) {
+            margin-right: 16px;
+          }
+
+          .imgBox {
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  &Box[data-module-name="donate"] {
+    .leftBox {
+      background-color: $bgSecondaryColor;
+      box-sizing: border-box;
+      border-radius: 24px;
+      margin-right: 32px;
+      padding: 60px 60px 120px;
+
+      .title {
+        color: $primaryColor;
+        margin-bottom: 16px;
+        @include fontSet(2.5rem, 700, 3.75rem);
+      }
+
+      .desc {
+        color: $textColor;
+        margin-bottom: 16px;
+        @include fontSet(1rem, 400, 1.5rem);
+      }
+
+      .money {
+        color: $textColor;
+        @include fontSet(2rem, 700, 2.5rem);
+      }
+
+      .imgBox {
+        font-size: 0;
+        text-align: center;
+        padding: 56px 0;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .rightBox {
+      flex: 1;
+
+      .subtitle {
+        color: $textColor;
+        margin-bottom: 16px;
+        @include fontSet(1.25rem, 700, 1.5rem);
+      }
+
+      .donate {
+        &List {
+          width: 100%;
+        }
+
+        &Item {
+          align-items: center;
+          box-sizing: border-box;
+          border: 2px solid $disabledColor;
+          border-radius: 16px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 16px;
+          padding: 22.5px 16px;
+
+          &.custom {
+            align-items: flex-start;
+            flex-direction: column;
+
+            .plan {
+              &Input {
+                background-color: transparent;
+                border: none;
+                border-radius: 8px;
+                box-sizing: border-box;
+                height: 100%;
+                position: absolute;
+                padding-left: 60px;
+                left: 0;
+                top: 0;
+                width: 100%;
+
+                &:focus {
+                  outline-color: rgba($primaryColor, 0.35);
+                }
+
+                @include placeholder {
+                  color: $textSecondaryColor;
+                  @include fontSet(1.125rem, 400, 1.625rem);
+                }
+
+                &Box {
+                  border-radius: 8px;
+                  box-sizing: border-box;
+                  background-color: #f1f5f9;
+                  margin-top: 8px;
+                  height: 60px;
+                  position: relative;
+                  width: 100%;
+                }
+              }
+
+              &Label {
+                color: $textColor;
+                padding: 17.5px 0;
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                @include fontSet(1rem, 400, 1.5rem);
+              }
+            }
+          }
+
+          &.selected {
+            border-color: $primaryColor;
+          }
+
+          .planName {
+            color: $primaryColor;
+            flex: 1;
+            @include fontSet(1.25rem, 700, 1.5rem);
+          }
+
+          .amount {
+            margin-left: 8px;
+            @include fontSet(1.5rem, 700, 2.25rem);
+
+            &Box {
+              color: $textColor;
+              @include fontSet(1rem, 400, 1.5rem);
+            }
+          }
+
+          .personBox {
+            color: $textSecondaryColor;
+            padding: 0 0 0 24px;
+            @include fontSet(0.875rem, 400, 1.3rem);
+          }
+        }
+
+        &Btn {
+          align-items: center;
+          background-color: $primaryColor;
+          border-radius: 500px;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          padding: 24px 0;
+          @include fontSet(1rem 600 1.1rem);
+
+          &Box{
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+  }
 }
 
 body {
   font-family: "Inter", "Noto Sans TC", sans-serif;
+}
+
+.outerBox {
+  overflow: hidden;
+  position: relative;
 }
 
 .container {
@@ -57,6 +407,7 @@ body {
 
 .header {
   align-items: center;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   padding: 28px 48px;
@@ -103,43 +454,6 @@ body {
         }
       }
     }
-  }
-}
-
-.blockTitle {
-  background-color: $textColor;
-  border-radius: 16px;
-  color: #fff;
-  height: fit-content;
-  padding: 8px 12px;
-  width: fit-content;
-  @include fontSet(1rem, 700, 1.18rem);
-}
-
-.gradientTitle {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  @include fontSet(4rem, 400, 5.8rem);
-  @extend %fontMantou;
-  @extend %mainGradient;
-}
-
-.btn {
-  align-items: center;
-  background-color: #f1f5f9;
-  border-radius: 500px;
-  color: $textColor;
-  display: flex;
-  padding: 22.5px 24px;
-  width: fit-content;
-  @include fontSet(1rem, 600, 1rem);
-
-  .arrow {
-    height: 20px;
-    margin-left: 8px;
-    object-fit: contain;
-    width: 20px;
   }
 }
 
@@ -344,24 +658,28 @@ body {
   }
 
   .leftBox {
-    display: flex;
-    flex-direction: column;
+    .newsItem {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  .newsItem {
-    display: flex;
-    margin-bottom: 24px;
+  .rightBox {
+    .newsItem {
+      display: flex;
+      margin-bottom: 24px;
 
-    .newsImg {
-      max-width: 200px;
-    }
+      .newsImg {
+        max-width: 200px;
+      }
 
-    .newsInfo {
-      margin-top: 0;
-      padding-left: 16px;
+      .newsInfo {
+        margin-top: 0;
+        padding-left: 16px;
 
-      .title {
-        @include fontSet(1rem, 700, 1.1875rem);
+        .title {
+          @include fontSet(1rem, 700, 1.1875rem);
+        }
       }
     }
   }
@@ -411,7 +729,7 @@ body {
       border-radius: 32px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       padding: 96px;
     }
   }
@@ -429,10 +747,165 @@ body {
   &Title {
     margin-bottom: 16px;
     @include fontSet(3.25rem, 400, 4.6rem);
-    @extend %fontMantou;    
+    @extend %fontMantou;
   }
 
-  &Subtitle{
+  &Subtitle {
+    flex: 1;
     @include fontSet(1.25rem, 600, 1.5rem);
   }
+
+  &Btn {
+    height: fit-content;
+    margin-right: 50px;
+    &Box {
+      align-items: flex-end;
+      display: flex;
+      margin-top: 24px;
+    }
+  }
+}
+
+.slogan {
+  padding: 104px 0;
+
+  &Box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nameBox {
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px 0px #a3b4cb33;
+    display: flex;
+    margin-top: 16px;
+    padding: 16px;
+    width: fit-content;
+
+    .no {
+      align-items: center;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      font-weight: 900;
+      height: 50px;
+      justify-content: center;
+      margin-right: 16px;
+      width: 50px;
+      @include fontSet(2rem, 900, 3rem);
+      @extend %mainGradient;
+    }
+
+    .name {
+      color: $primaryColor;
+      @include fontSet(2.5rem, 700, 4rem);
+    }
+  }
+}
+
+.footer {
+  background-color: $bgSecondaryColor;
+  padding: 64px 0;
+
+  &Box {
+    display: flex;
+
+    > * {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+    }
+  }
+
+  .nameBox {
+    align-items: center;
+    display: flex;
+
+    .no {
+      align-items: center;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      height: 32px;
+      justify-content: center;
+      margin-right: 8px;
+      width: 32px;
+      @include fontSet(1.25rem, 900, 1.875rem);
+      @extend %mainGradient;
+    }
+
+    .name {
+      color: $primaryColor;
+      @include fontSet(1.75rem, 700, 2.1rem);
+    }
+  }
+
+  .mediaBox {
+    margin-top: 16px;
+
+    ul {
+      align-items: center;
+      display: flex;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+      }
+
+      a {
+        align-items: center;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        height: 48px;
+        width: 48px;
+
+        img {
+          height: 28px;
+          width: 28px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  .copyRight {
+    color: $textColor;
+    margin-top: 16px;
+    @include fontSet(0.875rem, 400, 1.3rem);
+  }
+
+  .rightBox {
+    .title {
+      color: $textColor;
+      @include fontSet(1.5rem, 700, 2rem);
+    }
+  }
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

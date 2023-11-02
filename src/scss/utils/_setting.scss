@@ -1,0 +1,26 @@
+$primaryColor: #da7d4a;
+$textColor: #334155;
+$textSecondaryColor: #94a3b8;
+$bgColor: #fdfcfb;
+$bgSecondaryColor: #f7ece1;
+$disabledColor: #E2E8F0;
+
+%mainGradient {
+  background: linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
+  background: -webkit-linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
+}
+
+@font-face {
+  font-family: "Mantou";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/MantouSans-Regular.ttf") format("truetype");
+}
+
+%fontMantou {
+  font-family: "Mantou", sans-serif;
+}
+
+%fontEn {
+  font-family: "Inter", sans-serif;
+}

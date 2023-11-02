@@ -32,7 +32,7 @@ svg {
   height: auto;
 }
 
-.banner .textBox .nameBox .no, .banner h1, .gradientTitle {
+.footer .nameBox .no, .slogan .nameBox .no, .banner .textBox .nameBox .no, .banner h1, .gradientTitle {
   background: linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
   background: -webkit-linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
 }
@@ -45,75 +45,6 @@ svg {
 }
 .otherTitle, .marquee, .banner h1, .gradientTitle {
   font-family: "Mantou", sans-serif;
-}
-
-body {
-  font-family: "Inter", "Noto Sans TC", sans-serif;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1320px;
-  padding: 0 0.75rem;
-  width: 100%;
-}
-@media (max-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media (max-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (max-width: 576px) {
-  .container {
-    max-width: 54px;
-  }
-}
-
-.header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 28px 48px;
-}
-.header .logoBox {
-  align-items: center;
-  display: flex;
-}
-.header .logoBox span {
-  color: #da7d4a;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.5;
-  margin-left: 8px;
-}
-.header .menuBox ul {
-  align-items: center;
-  display: flex;
-}
-.header .menuBox ul li {
-  padding: 8px;
-  margin: 0 16px;
-}
-.header .menuBox ul li a {
-  color: #334155;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.header .mediaBox ul {
-  display: flex;
-}
-.header .mediaBox ul li:not(:last-child) {
-  margin-right: 16px;
 }
 
 .blockTitle {
@@ -154,10 +85,412 @@ body {
 }
 .btn .arrow {
   height: 20px;
-  margin-left: 8px;
+  margin-left: 12px;
   -o-object-fit: contain;
      object-fit: contain;
   width: 20px;
+}
+.btn-2 {
+  background-color: #fff;
+}
+
+.shareBox {
+  align-items: center;
+  display: flex;
+}
+.shareBox span {
+  color: #334155;
+  margin-right: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.moduleMask {
+  background-color: rgba(51, 65, 85, 0.35);
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+}
+.moduleMask.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.moduleBox {
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  padding: 48px;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.moduleBox.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.moduleHead {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  padding: 0 48px;
+}
+.moduleTitle {
+  color: #334155;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.moduleClose {
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+}
+.moduleClose img {
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.moduleContent {
+  display: flex;
+  max-height: 650px;
+  overflow-y: auto;
+  padding: 48px;
+}
+.moduleContent .leftBox {
+  margin-right: 32px;
+}
+.moduleContent .leftBox .imgBox {
+  margin-bottom: 16px;
+}
+.moduleContent .leftBox .text {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4857142857;
+}
+.moduleContent .leftBox .date {
+  color: #94a3b8;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4857142857;
+}
+.moduleContent .leftBox .socialBox {
+  display: flex;
+}
+.moduleContent .leftBox .socialBox li:not(:last-child) {
+  margin-right: 16px;
+}
+.moduleContent .rightBox .title {
+  color: #da7d4a;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.moduleContent .rightBox .subtitle {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.moduleContent .rightBox .subtitle + .desc {
+  margin-bottom: 24px;
+}
+.moduleContent .rightBox .date {
+  color: #94a3b8;
+  margin-bottom: 40px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4857142857;
+}
+.moduleContent .rightBox .desc {
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.moduleContent .rightBox .moreBox {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  margin-top: 96px;
+  padding: 16px;
+}
+.moduleContent .rightBox .moreTitle {
+  color: #334155;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.moduleContent .rightBox .moreList {
+  display: flex;
+}
+.moduleContent .rightBox .moreItem {
+  width: 33.3333333333%;
+}
+.moduleContent .rightBox .moreItem:not(:last-child) {
+  margin-right: 16px;
+}
+.moduleContent .rightBox .moreItem .imgBox {
+  margin-bottom: 12px;
+}
+.moduleBox[data-module-name=donate] .leftBox {
+  background-color: #f7ece1;
+  box-sizing: border-box;
+  border-radius: 24px;
+  margin-right: 32px;
+  padding: 60px 60px 120px;
+}
+.moduleBox[data-module-name=donate] .leftBox .title {
+  color: #da7d4a;
+  margin-bottom: 16px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.moduleBox[data-module-name=donate] .leftBox .desc {
+  color: #334155;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.moduleBox[data-module-name=donate] .leftBox .money {
+  color: #334155;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.moduleBox[data-module-name=donate] .leftBox .imgBox {
+  font-size: 0;
+  text-align: center;
+  padding: 56px 0;
+}
+.moduleBox[data-module-name=donate] .leftBox .imgBox img {
+  max-width: 100%;
+}
+.moduleBox[data-module-name=donate] .rightBox {
+  flex: 1;
+}
+.moduleBox[data-module-name=donate] .rightBox .subtitle {
+  color: #334155;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateList {
+  width: 100%;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem {
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid #E2E8F0;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 22.5px 16px;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput {
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  position: absolute;
+  padding-left: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput:focus {
+  outline-color: rgba(218, 125, 74, 0.35);
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput ::-webkit-input-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput :-moz-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput ::-moz-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput :-ms-input-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInputBox {
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #f1f5f9;
+  margin-top: 8px;
+  height: 60px;
+  position: relative;
+  width: 100%;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planLabel {
+  color: #334155;
+  padding: 17.5px 0;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem.selected {
+  border-color: #da7d4a;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem .planName {
+  color: #da7d4a;
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem .amount {
+  margin-left: 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem .amountBox {
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateItem .personBox {
+  color: #94a3b8;
+  padding: 0 0 0 24px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4857142857;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateBtn {
+  align-items: center;
+  background-color: #da7d4a;
+  border-radius: 500px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 1rem 600 1.1rem;
+  font-weight: 400;
+  line-height: 1rem 600 1.1rem/1rem 600 1.1rem;
+}
+.moduleBox[data-module-name=donate] .rightBox .donateBtnBox {
+  margin-top: 16px;
+}
+
+body {
+  font-family: "Inter", "Noto Sans TC", sans-serif;
+}
+
+.outerBox {
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1320px;
+  padding: 0 0.75rem;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    max-width: 54px;
+  }
+}
+
+.header {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 48px;
+}
+.header .logoBox {
+  align-items: center;
+  display: flex;
+}
+.header .logoBox span {
+  color: #da7d4a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-left: 8px;
+}
+.header .menuBox ul {
+  align-items: center;
+  display: flex;
+}
+.header .menuBox ul li {
+  padding: 8px;
+  margin: 0 16px;
+}
+.header .menuBox ul li a {
+  color: #334155;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.header .mediaBox ul {
+  display: flex;
+}
+.header .mediaBox ul li:not(:last-child) {
+  margin-right: 16px;
 }
 
 .banner {
@@ -356,22 +689,22 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.news .leftBox {
+.news .leftBox .newsItem {
   display: flex;
   flex-direction: column;
 }
-.news .newsItem {
+.news .rightBox .newsItem {
   display: flex;
   margin-bottom: 24px;
 }
-.news .newsItem .newsImg {
+.news .rightBox .newsItem .newsImg {
   max-width: 200px;
 }
-.news .newsItem .newsInfo {
+.news .rightBox .newsItem .newsInfo {
   margin-top: 0;
   padding-left: 16px;
 }
-.news .newsItem .newsInfo .title {
+.news .rightBox .newsItem .newsInfo .title {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.1875;
@@ -420,7 +753,7 @@ body {
   border-radius: 32px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   padding: 96px;
 }
 .other .donateBox {
@@ -438,7 +771,154 @@ body {
   line-height: 1.4153846154;
 }
 .otherSubtitle {
+  flex: 1;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.2;
+}
+.otherBtn {
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 50px;
+}
+.otherBtnBox {
+  align-items: flex-end;
+  display: flex;
+  margin-top: 24px;
+}
+
+.slogan {
+  padding: 104px 0;
+}
+.sloganBox {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slogan .nameBox {
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 12px 0px rgba(163, 180, 203, 0.2);
+  display: flex;
+  margin-top: 16px;
+  padding: 16px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.slogan .nameBox .no {
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  font-weight: 900;
+  height: 50px;
+  justify-content: center;
+  margin-right: 16px;
+  width: 50px;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+.slogan .nameBox .name {
+  color: #da7d4a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.footer {
+  background-color: #f7ece1;
+  padding: 64px 0;
+}
+.footerBox {
+  display: flex;
+}
+.footerBox > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+.footer .nameBox {
+  align-items: center;
+  display: flex;
+}
+.footer .nameBox .no {
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  margin-right: 8px;
+  width: 32px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+.footer .nameBox .name {
+  color: #da7d4a;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.footer .mediaBox {
+  margin-top: 16px;
+}
+.footer .mediaBox ul {
+  align-items: center;
+  display: flex;
+}
+.footer .mediaBox ul li:not(:last-child) {
+  margin-right: 8px;
+}
+.footer .mediaBox ul a {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+}
+.footer .mediaBox ul a img {
+  height: 28px;
+  width: 28px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.footer .copyRight {
+  color: #334155;
+  margin-top: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4857142857;
+}
+.footer .rightBox .title {
+  color: #334155;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3333333333;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }/*# sourceMappingURL=all.css.map */

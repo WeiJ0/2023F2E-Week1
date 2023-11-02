@@ -12,295 +12,684 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <header class="header">
-      <div class="logoBox">
-        <img src="./assets/logo.svg" alt="logo" />
-        <span>喵立翰 Miao Li-Han</span>
-      </div>
-
-      <nav class="menuBox">
-        <ul>
-          <li>
-            <a href="#">候選人主張</a>
-          </li>
-          <li>
-            <a href="#">最新活動</a>
-          </li>
-          <li>
-            <a href="#">政策議題</a>
-          </li>
-          <li>
-            <a href="#">小額捐款</a>
-          </li>
-          <li>
-            <a href="#">民眾服務信箱</a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="mediaBox">
-        <ul>
-          <li>
-            <a href="#">
-              <img src="./assets/icon-fb.png" alt="facebook" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="./assets/icon-ig.png" alt="ig" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="./assets/icon-yt.png" alt="youtube" />
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="banner">
-      <div class="container">
-        <h1>台灣的明天 喵先鋪路</h1>
-
-        <div class="textBox">
-          <h2 class="titleName">2024 立委參選人</h2>
-          <div class="nameBox">
-            <span class="no">3</span>
-            <span class="name">喵立翰 Miao LiHan</span>
-          </div>
+    <div class="outerBox">
+      <header class="header">
+        <div class="logoBox">
+          <img src="./assets/logo.svg" alt="logo" />
+          <span>喵立翰 Miao Li-Han</span>
         </div>
 
-        <div class="bg">
-          <svg
-            id="bannerBg"
-            class="bannerBg"
-            viewBox="0 0 723 404"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_4833_2390)">
-              <path
-                d="M0 361.5C0 161.849 161.849 0 361.5 0C561.151 0 723 161.849 723 361.5V404H0V361.5Z"
-                fill="url(#paint0_linear_4833_2390)"
-              />
-              <path
-                d="M753.841 286.336C752.086 286.336 750.401 286.61 748.814 287.109C747.674 276.286 738.509 267.847 727.369 267.847C724.357 267.847 721.491 268.467 718.886 269.58C718.916 269.087 718.962 268.599 718.962 268.096C718.962 254.462 707.899 243.41 694.251 243.41C683.239 243.41 673.916 250.614 670.725 260.557C668.878 259.85 666.883 259.449 664.786 259.449C657.667 259.449 651.606 263.912 649.209 270.185C646.716 268.706 643.815 267.837 640.706 267.837C631.495 267.837 624.025 275.299 624.025 284.501C624.025 286.717 624.467 288.832 625.256 290.769C616.737 293.895 610.651 302.049 610.651 311.642C610.651 323.934 620.625 333.898 632.93 333.898C639.698 333.898 645.754 330.873 649.84 326.11C655.148 330.624 662.023 333.359 669.539 333.359C673.198 333.359 676.704 332.713 679.956 331.529C684.806 336.028 691.294 338.783 698.434 338.783C708.271 338.783 716.886 333.562 721.654 325.739C724.224 327.355 727.257 328.306 730.519 328.306C737.582 328.306 743.608 323.914 746.04 317.717C748.366 318.947 751.017 319.654 753.836 319.654C763.047 319.654 770.518 312.196 770.518 302.99C770.518 293.794 763.052 286.336 753.841 286.336Z"
-                fill="white"
-              />
-              <path
-                d="M185.337 344.553C185.409 357.306 178.469 368.477 168.157 374.455L-11.7369 375.442C-15.4294 370.459 -17.6685 364.285 -17.7078 357.613C-17.7995 340.772 -4.19461 327.083 12.6117 326.992C18.7529 326.959 24.4685 328.758 29.2806 331.851C33.091 319.726 44.4109 310.89 57.8194 310.818C57.6819 285.206 78.3576 264.323 103.989 264.185C129.628 264.041 150.533 284.702 150.67 310.308C169.689 310.203 185.232 325.507 185.337 344.553Z"
-                fill="white"
-              />
-              <path
-                d="M572.887 230.785C572.21 230.785 571.56 230.888 570.953 231.085C571.062 230.509 571.117 229.917 571.117 229.311C571.117 223.754 566.604 219.252 561.041 219.252C557.893 219.252 555.078 220.696 553.232 222.956C551.786 215.785 545.449 210.389 537.842 210.389C534.648 210.389 531.672 211.341 529.195 212.982C529.228 212.712 529.243 212.436 529.243 212.154C529.243 208.235 526.064 205.053 522.141 205.053C521.16 205.053 520.222 205.25 519.365 205.614C519.05 200.23 514.577 195.959 509.108 195.959C505.449 195.959 502.236 197.873 500.414 200.758C498.505 199.869 496.373 199.378 494.126 199.378C485.848 199.378 479.141 206.078 479.141 214.347C479.141 216.349 479.535 218.257 480.252 219.998C474.71 220.966 470.505 225.798 470.505 231.61C470.505 238.129 475.791 243.41 482.317 243.41H572.887C576.376 243.41 579.206 240.586 579.206 237.097C579.206 233.609 576.379 230.785 572.887 230.785Z"
-                fill="white"
-              />
-              <path
-                d="M34.7874 150.554C34.7874 155.21 36.4226 159.486 39.1455 162.842H151.798C152.128 162.668 152.45 162.482 152.773 162.288C159.722 158.089 164.363 150.468 164.363 141.765C164.363 128.525 153.619 117.781 140.366 117.781H140.083C138.731 110.521 132.357 105.038 124.697 105.038C121.038 105.038 117.67 106.291 115.006 108.391C113.972 109.198 113.048 110.129 112.26 111.173C111.502 109.861 110.624 108.627 109.634 107.498C105.353 102.597 99.0452 99.5088 92.0301 99.5088C81.1697 99.5088 72.0532 106.897 69.4236 116.92C69.307 117.339 69.2099 117.773 69.1128 118.204C68.1884 117.932 67.2056 117.785 66.1841 117.785C60.412 117.785 55.7314 122.461 55.7314 128.227C55.7314 129.22 55.8674 130.171 56.1199 131.075C55.5567 131.017 54.9701 130.986 54.3875 130.986C53.0241 130.986 51.6918 131.121 50.4177 131.393C41.4916 133.232 34.7874 141.117 34.7874 150.554Z"
-                fill="white"
-              />
-              <path
-                d="M310.236 27.5523C309.376 27.5493 308.538 27.6403 307.728 27.8071C304.894 20.794 298.035 15.8284 289.994 15.7889C287.274 15.7768 284.687 16.3319 282.336 17.3359C280.505 7.51087 271.909 0.0518289 261.539 0.000261756C249.794 -0.0573721 240.229 9.40975 240.171 21.1398C240.168 21.4583 240.177 21.7737 240.19 22.0862C239.931 22.068 239.676 22.0437 239.415 22.0437C232.58 22.0103 227.011 27.5189 226.978 34.3501C226.944 41.1812 232.459 46.7413 239.297 46.7747C239.922 46.7777 240.536 46.7201 241.137 46.6322C241.805 52.5563 246.812 57.1761 252.928 57.2034C257.1 57.2246 260.774 55.0983 262.924 51.8708C264.585 53.0629 266.613 53.7787 268.812 53.7909C272.298 53.8091 275.38 52.071 277.229 49.4107C280.59 52.3591 284.987 54.161 289.812 54.1852C294.926 54.2095 299.581 52.2317 303.039 48.9951C305.016 50.4754 307.46 51.3703 310.123 51.3824C316.713 51.4127 322.078 46.1043 322.111 39.5219C322.142 32.9456 316.825 27.5826 310.236 27.5523Z"
-                fill="white"
-              />
-            </g>
-            <defs>
-              <linearGradient
-                id="paint0_linear_4833_2390"
-                x1="361.5"
-                y1="0"
-                x2="397.07"
-                y2="348.36"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#FFD5E3" />
-                <stop offset="0.15625" stop-color="#E8E3FE" />
-                <stop offset="0.791667" stop-color="#A0D2FF" />
-              </linearGradient>
-              <clipPath id="clip0_4833_2390">
+        <nav class="menuBox">
+          <ul>
+            <li>
+              <a href="#advocate">候選人主張</a>
+            </li>
+            <li>
+              <a href="#news">最新活動</a>
+            </li>
+            <li>
+              <a href="#policy">政策議題</a>
+            </li>
+            <li>
+              <a href="#other">小額捐款</a>
+            </li>
+            <li>
+              <a href="#other">民眾服務信箱</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mediaBox">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="./assets/icon-fb.png" alt="facebook" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/icon-ig.png" alt="ig" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/icon-yt.png" alt="youtube" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="banner">
+        <div class="container">
+          <h1>台灣的明天 喵先鋪路</h1>
+
+          <div class="textBox">
+            <h2 class="titleName">2024 立委參選人</h2>
+            <div class="nameBox">
+              <span class="no">3</span>
+              <span class="name">喵立翰 Miao LiHan</span>
+            </div>
+          </div>
+
+          <div class="bg">
+            <svg
+              id="bannerBg"
+              class="bannerBg"
+              viewBox="0 0 723 404"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_4833_2390)">
                 <path
                   d="M0 361.5C0 161.849 161.849 0 361.5 0C561.151 0 723 161.849 723 361.5V404H0V361.5Z"
+                  fill="url(#paint0_linear_4833_2390)"
+                />
+                <path
+                  d="M753.841 286.336C752.086 286.336 750.401 286.61 748.814 287.109C747.674 276.286 738.509 267.847 727.369 267.847C724.357 267.847 721.491 268.467 718.886 269.58C718.916 269.087 718.962 268.599 718.962 268.096C718.962 254.462 707.899 243.41 694.251 243.41C683.239 243.41 673.916 250.614 670.725 260.557C668.878 259.85 666.883 259.449 664.786 259.449C657.667 259.449 651.606 263.912 649.209 270.185C646.716 268.706 643.815 267.837 640.706 267.837C631.495 267.837 624.025 275.299 624.025 284.501C624.025 286.717 624.467 288.832 625.256 290.769C616.737 293.895 610.651 302.049 610.651 311.642C610.651 323.934 620.625 333.898 632.93 333.898C639.698 333.898 645.754 330.873 649.84 326.11C655.148 330.624 662.023 333.359 669.539 333.359C673.198 333.359 676.704 332.713 679.956 331.529C684.806 336.028 691.294 338.783 698.434 338.783C708.271 338.783 716.886 333.562 721.654 325.739C724.224 327.355 727.257 328.306 730.519 328.306C737.582 328.306 743.608 323.914 746.04 317.717C748.366 318.947 751.017 319.654 753.836 319.654C763.047 319.654 770.518 312.196 770.518 302.99C770.518 293.794 763.052 286.336 753.841 286.336Z"
                   fill="white"
                 />
-              </clipPath>
-            </defs>
-          </svg>
+                <path
+                  d="M185.337 344.553C185.409 357.306 178.469 368.477 168.157 374.455L-11.7369 375.442C-15.4294 370.459 -17.6685 364.285 -17.7078 357.613C-17.7995 340.772 -4.19461 327.083 12.6117 326.992C18.7529 326.959 24.4685 328.758 29.2806 331.851C33.091 319.726 44.4109 310.89 57.8194 310.818C57.6819 285.206 78.3576 264.323 103.989 264.185C129.628 264.041 150.533 284.702 150.67 310.308C169.689 310.203 185.232 325.507 185.337 344.553Z"
+                  fill="white"
+                />
+                <path
+                  d="M572.887 230.785C572.21 230.785 571.56 230.888 570.953 231.085C571.062 230.509 571.117 229.917 571.117 229.311C571.117 223.754 566.604 219.252 561.041 219.252C557.893 219.252 555.078 220.696 553.232 222.956C551.786 215.785 545.449 210.389 537.842 210.389C534.648 210.389 531.672 211.341 529.195 212.982C529.228 212.712 529.243 212.436 529.243 212.154C529.243 208.235 526.064 205.053 522.141 205.053C521.16 205.053 520.222 205.25 519.365 205.614C519.05 200.23 514.577 195.959 509.108 195.959C505.449 195.959 502.236 197.873 500.414 200.758C498.505 199.869 496.373 199.378 494.126 199.378C485.848 199.378 479.141 206.078 479.141 214.347C479.141 216.349 479.535 218.257 480.252 219.998C474.71 220.966 470.505 225.798 470.505 231.61C470.505 238.129 475.791 243.41 482.317 243.41H572.887C576.376 243.41 579.206 240.586 579.206 237.097C579.206 233.609 576.379 230.785 572.887 230.785Z"
+                  fill="white"
+                />
+                <path
+                  d="M34.7874 150.554C34.7874 155.21 36.4226 159.486 39.1455 162.842H151.798C152.128 162.668 152.45 162.482 152.773 162.288C159.722 158.089 164.363 150.468 164.363 141.765C164.363 128.525 153.619 117.781 140.366 117.781H140.083C138.731 110.521 132.357 105.038 124.697 105.038C121.038 105.038 117.67 106.291 115.006 108.391C113.972 109.198 113.048 110.129 112.26 111.173C111.502 109.861 110.624 108.627 109.634 107.498C105.353 102.597 99.0452 99.5088 92.0301 99.5088C81.1697 99.5088 72.0532 106.897 69.4236 116.92C69.307 117.339 69.2099 117.773 69.1128 118.204C68.1884 117.932 67.2056 117.785 66.1841 117.785C60.412 117.785 55.7314 122.461 55.7314 128.227C55.7314 129.22 55.8674 130.171 56.1199 131.075C55.5567 131.017 54.9701 130.986 54.3875 130.986C53.0241 130.986 51.6918 131.121 50.4177 131.393C41.4916 133.232 34.7874 141.117 34.7874 150.554Z"
+                  fill="white"
+                />
+                <path
+                  d="M310.236 27.5523C309.376 27.5493 308.538 27.6403 307.728 27.8071C304.894 20.794 298.035 15.8284 289.994 15.7889C287.274 15.7768 284.687 16.3319 282.336 17.3359C280.505 7.51087 271.909 0.0518289 261.539 0.000261756C249.794 -0.0573721 240.229 9.40975 240.171 21.1398C240.168 21.4583 240.177 21.7737 240.19 22.0862C239.931 22.068 239.676 22.0437 239.415 22.0437C232.58 22.0103 227.011 27.5189 226.978 34.3501C226.944 41.1812 232.459 46.7413 239.297 46.7747C239.922 46.7777 240.536 46.7201 241.137 46.6322C241.805 52.5563 246.812 57.1761 252.928 57.2034C257.1 57.2246 260.774 55.0983 262.924 51.8708C264.585 53.0629 266.613 53.7787 268.812 53.7909C272.298 53.8091 275.38 52.071 277.229 49.4107C280.59 52.3591 284.987 54.161 289.812 54.1852C294.926 54.2095 299.581 52.2317 303.039 48.9951C305.016 50.4754 307.46 51.3703 310.123 51.3824C316.713 51.4127 322.078 46.1043 322.111 39.5219C322.142 32.9456 316.825 27.5826 310.236 27.5523Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <linearGradient
+                  id="paint0_linear_4833_2390"
+                  x1="361.5"
+                  y1="0"
+                  x2="397.07"
+                  y2="348.36"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#FFD5E3" />
+                  <stop offset="0.15625" stop-color="#E8E3FE" />
+                  <stop offset="0.791667" stop-color="#A0D2FF" />
+                </linearGradient>
+                <clipPath id="clip0_4833_2390">
+                  <path
+                    d="M0 361.5C0 161.849 161.849 0 361.5 0C561.151 0 723 161.849 723 361.5V404H0V361.5Z"
+                    fill="white"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
 
-          <div class="person">
-            <img src="./assets/banner-people.png" alt="person" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="marquee">
-      <span>為喵星人，護台灣！從喵的眼中，看見台灣 喵的未來，人的希望</span>
-    </section>
-
-    <section class="advocate">
-      <div class="container">
-        <div class="advocateBox">
-          <div class="textBox">
-            <h3 class="blockTitle">ADVOCATE</h3>
-            <h2 class="gradientTitle">候選人主張</h2>
-            <h4 class="advocateTitle">
-              我堅信 !
-              藉由推動更完善的<em>貓咪福利</em>和相關政策，更是間接地投資於<em>台灣的未來</em>。
-            </h4>
-            <div class="advocateContent">
-              <p>
-                畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的
-                GDP 經濟帶來巨大效益。
-              </p>
-              <p>
-                因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
-              </p>
+            <div class="person">
+              <img src="./assets/banner-people.png" alt="person" />
             </div>
           </div>
-          <div class="imgBox">
-            <img src="./assets/advocate.png" alt="advocate" />
+        </div>
+      </section>
+
+      <section class="marquee">
+        <span>為喵星人，護台灣！從喵的眼中，看見台灣 喵的未來，人的希望</span>
+      </section>
+
+      <section id="advocate" class="advocate">
+        <div class="container">
+          <div class="advocateBox">
+            <div class="textBox">
+              <h3 class="blockTitle">ADVOCATE</h3>
+              <h2 class="gradientTitle">候選人主張</h2>
+              <h4 class="advocateTitle">
+                我堅信 !
+                藉由推動更完善的<em>貓咪福利</em>和相關政策，更是間接地投資於<em>台灣的未來</em>。
+              </h4>
+              <div class="advocateContent">
+                <p>
+                  畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的
+                  GDP 經濟帶來巨大效益。
+                </p>
+                <p>
+                  因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
+                </p>
+              </div>
+            </div>
+            <div class="imgBox">
+              <img src="./assets/advocate.png" alt="advocate" />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="news">
-      <div class="container">
-        <div class="titleBox">
-          <h3 class="blockTitle">LATEST EVENTS</h3>
-          <h2 class="gradientTitle">最新活動</h2>
+      <section id="news" class="news">
+        <div class="container">
+          <div class="titleBox">
+            <h3 class="blockTitle">LATEST EVENTS</h3>
+            <h2 class="gradientTitle">最新活動</h2>
+          </div>
+
+          <div class="newsBox">
+            <div class="leftBox">
+              <div class="newsItem" data-module="news">
+                <div class="newsImg">
+                  <img
+                    src="./assets/news1.png"
+                    alt="參與台北寵物論壇，爭取貓咪友善環境"
+                  />
+                </div>
+                <div class="newsInfo">
+                  <span class="date">2023/12/26</span>
+                  <p class="title">參與台北寵物論壇，爭取貓咪友善環境</p>
+                  <p class="desc">
+                    炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
+                    VIP 休憩空間。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rightBox">
+              <div class="newsItem" data-module="news">
+                <div class="newsImg">
+                  <img
+                    src="./assets/news2.png"
+                    alt="掃街模式開啟！帶著你的貓耳，來和我一起走！"
+                  />
+                </div>
+                <div class="newsInfo">
+                  <span class="date">2023/12/24</span>
+                  <p class="title">
+                    掃街模式開啟！帶著你的貓耳，來和我一起走！
+                  </p>
+                  <p class="desc">
+                    街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！
+                  </p>
+                </div>
+              </div>
+              <div class="newsItem" data-module="news">
+                <div class="newsImg">
+                  <img src="./assets/news3.png" alt="收容所模特兒大比拼！" />
+                </div>
+                <div class="newsInfo">
+                  <span class="date">2023/12/20</span>
+                  <p class="title">收容所模特兒大比拼！</p>
+                  <p class="desc">
+                    今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！
+                  </p>
+                </div>
+              </div>
+              <div class="newsItem" data-module="news">
+                <div class="newsImg">
+                  <img
+                    src="./assets/news4.png"
+                    alt="參與台北寵物論壇，爭取貓咪友善環境"
+                  />
+                </div>
+                <div class="newsInfo">
+                  <span class="date">2023/12/24</span>
+                  <p class="title">參與台北寵物論壇，爭取貓咪友善環境</p>
+                  <p class="desc">
+                    炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
+                    VIP 休憩空間。
+                  </p>
+                </div>
+              </div>
+              <div class="news-btn">
+                <a class="btn">
+                  <span>查看更多</span>
+                  <img class="arrow" src="./assets/arrow-right.svg" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="newsBox">
+      <section id="policy" class="policy">
+        <div class="container">
+          <div class="titleBox">
+            <h3 class="blockTitle">POLICY ISSUES</h3>
+            <h2 class="gradientTitle">政策議題</h2>
+          </div>
+
+          <ul class="policyList">
+            <li class="policyItem" data-module="policy">
+              <div class="policyInfo">
+                <p>為毛孩子謀福利！<br />推動寵物醫療保障方案</p>
+              </div>
+              <div class="policyImg">
+                <img
+                  src="./assets/policy1.png"
+                  alt="為毛孩子謀福利！推動寵物醫療保障方案"
+                />
+              </div>
+            </li>
+            <li class="policyItem" data-module="policy">
+              <div class="policyInfo">
+                <p>打造休閒天堂！<br />推廣寵物休閒與娛樂場所</p>
+              </div>
+              <div class="policyImg">
+                <img
+                  src="./assets/policy2.png"
+                  alt="打造休閒天堂！推廣寵物休閒與娛樂場所"
+                />
+              </div>
+            </li>
+            <li class="policyItem" data-module="policy">
+              <div class="policyInfo">
+                <p>推廣寵物飼養教育，讓愛更加專業</p>
+              </div>
+              <div class="policyImg">
+                <img
+                  src="./assets/policy3.png"
+                  alt="推廣寵物飼養教育，讓愛更加專業"
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="other" class="other">
+        <div class="container">
+          <div class="otherBox">
+            <div class="donateBox">
+              <h2 class="otherTitle">小額支持喵喵</h2>
+              <span class="otherSubtitle"
+                >您的小筆捐款，是每隻毛孩未來的大大動力！</span
+              >
+              <div class="otherBtnBox">
+                <a class="otherBtn btn btn-2" data-module="donate">
+                  <span>小額捐款</span>
+                  <img class="arrow" src="./assets/arrow-right.svg" />
+                </a>
+                <img src="./assets/donate.png" />
+              </div>
+            </div>
+            <div class="serviceBox">
+              <h2 class="otherTitle">民眾服務信箱</h2>
+              <span class="otherSubtitle"
+                >親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</span
+              >
+              <div class="otherBtnBox">
+                <a class="otherBtn btn btn-2">
+                  <span>查看更多</span>
+                  <img class="arrow" src="./assets/arrow-right.svg" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slogan" class="slogan">
+        <div class="container">
+          <div class="sloganBox">
+            <h2 class="sloganTitle gradientTitle">台灣的明天 喵先鋪路</h2>
+            <div class="nameBox">
+              <span class="no">3</span>
+              <span class="name">喵立翰 Miao LiHan</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footerBox">
+            <div class="leftBox">
+              <div class="nameBox">
+                <div class="no">3</div>
+                <span class="name">喵立翰 Miao Li-Han</span>
+              </div>
+
+              <nav class="mediaBox">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <img src="./assets/icon-fb.png" alt="facebook" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./assets/icon-ig.png" alt="ig" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="./assets/icon-yt.png" alt="youtube" />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <p class="copyRight">© 2023 喵立翰 Miao Li-Han 版權所有</p>
+            </div>
+            <div class="rightBox">
+              <p class="title">競選總部</p>
+              <ul class="contactInfo">
+                <li>
+                  <span>辦公室地址：喵星區，毛茸茸大道88號，喵喵大樓3樓</span>
+                </li>
+                <li>
+                  <span>電話：<a href="tel:028885678">(02) 888-5678</a></span>
+                </li>
+                <li>
+                  <span
+                    >電子郵件地址：<a href="mailto:meowoffice@linmeow.tw"
+                      >meowoffice@linmeow.tw</a
+                    ></span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div class="moduleMask"></div>
+
+      <div class="moduleBox" data-module-name="news">
+        <div class="moduleHead">
+          <div class="moduleTitle">最新活動</div>
+          <div class="moduleClose">
+            <img src="./assets/model-close.png" alt="close" />
+          </div>
+        </div>
+        <div class="moduleContent">
           <div class="leftBox">
-            <div class="newsImg">
-              <img
-                src="./assets/news1.png"
-                alt="參與台北寵物論壇，爭取貓咪友善環境"
-              />
+            <div class="ImgBox">
+              <img src="./assets/news1.png" alt="news" />
             </div>
-            <div class="newsInfo">
-              <span class="date">2023/12/26</span>
-              <p class="title">參與台北寵物論壇，爭取貓咪友善環境</p>
+            <p class="text">參與台北寵物論壇，爭取貓咪友善環境</p>
+            <p class="date">2023/12/24</p>
+            <div class="shareBox">
+              <span>分享</span>
+              <ul class="socialBox">
+                <li>
+                  <a href="#" class="socialFB">
+                    <img src="./assets/icon-fb.png" alt="facebook" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="socialLine">
+                    <img src="./assets/icon-ig.png" alt="ig" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rightBox">
+            <h2 class="title">參與台北寵物論壇，爭取貓咪友善環境</h2>
+            <p class="date">2023/12/24</p>
+            <div class="descBox">
               <p class="desc">
                 炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
                 VIP 休憩空間。
               </p>
             </div>
-          </div>
 
+            <div class="moreBox">
+              <h3 class="moreTitle">更多活動</h3>
+              <ul class="moreList">
+                <li class="moreItem">
+                  <div class="imgBox">
+                    <img src="./assets/news2.png" alt="news" />
+                  </div>
+                  <p>掃街模式開啟！帶著你的貓耳，來和我一起走！</p>
+                </li>
+                <li class="moreItem">
+                  <div class="imgBox">
+                    <img src="./assets/news3.png" alt="news" />
+                  </div>
+                  <p>收容所模特兒大比拼！</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="moduleBox" data-module-name="policy">
+        <div class="moduleHead">
+          <div class="moduleTitle">政策議題</div>
+          <div class="moduleClose">
+            <img src="./assets/model-close.png" alt="close" />
+          </div>
+        </div>
+        <div class="moduleContent">
+          <div class="leftBox">
+            <div class="ImgBox">
+              <img
+                src="./assets/policy1.png"
+                alt="為毛孩子謀福利！推動寵物醫療保障方案"
+              />
+            </div>
+            <p class="text">為毛孩子謀福利！推動寵物醫療保障方案</p>
+            <p class="date">2023/12/24</p>
+            <div class="shareBox">
+              <span>分享</span>
+              <ul class="socialBox">
+                <li>
+                  <a href="#" class="socialFB">
+                    <img src="./assets/icon-fb.png" alt="facebook" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="socialLine">
+                    <img src="./assets/icon-ig.png" alt="ig" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="rightBox">
-            <div class="newsItem">
-              <div class="newsImg">
-                <img
-                  src="./assets/news2.png"
-                  alt="掃街模式開啟！帶著你的貓耳，來和我一起走！"
-                />
-              </div>
-              <div class="newsInfo">
-                <span class="date">2023/12/24</span>
-                <p class="title">掃街模式開啟！帶著你的貓耳，來和我一起走！</p>
-                <p class="desc">
-                  街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！
-                </p>
-              </div>
+            <h2 class="title">為毛孩子謀福利！推動寵物醫療保障方案</h2>
+
+            <div class="descBox">
+              <h3 class="subtitle">設立寵物醫療基金</h3>
+              <p class="desc">
+                每年撥款新台幣 10 億元，專款專用於支援家庭寵物的醫療費用
+              </p>
+
+              <h3 class="subtitle">提供醫療補助</h3>
+              <p class="desc">
+                每隻寵物每年可獲得高達新台幣 20,000
+                元的醫療補助，減輕飼主的經濟壓力
+              </p>
+
+              <h3 class="subtitle">合作動物醫院</h3>
+              <p class="desc">
+                目前已有和超過 200 家動物醫院進行初步的合作討論
+              </p>
             </div>
-            <div class="newsItem">
-              <div class="newsImg">
-                <img src="./assets/news3.png" alt="收容所模特兒大比拼！" />
-              </div>
-              <div class="newsInfo">
-                <span class="date">2023/12/20</span>
-                <p class="title">收容所模特兒大比拼！</p>
-                <p class="desc">
-                  今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！
-                </p>
-              </div>
-            </div>
-            <div class="newsItem">
-              <div class="newsImg">
-                <img
-                  src="./assets/news4.png"
-                  alt="參與台北寵物論壇，爭取貓咪友善環境"
-                />
-              </div>
-              <div class="newsInfo">
-                <span class="date">2023/12/24</span>
-                <p class="title">參與台北寵物論壇，爭取貓咪友善環境</p>
-                <p class="desc">
-                  炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
-                  VIP 休憩空間。
-                </p>
-              </div>
-            </div>
-            <div class="news-btn">
-              <a class="btn">
-                <span>查看更多</span>
-                <img class="arrow" src="./assets/arrow-right.svg" />
-              </a>
+
+            <div class="moreBox">
+              <h3 class="moreTitle">更多政策議題</h3>
+              <ul class="moreList">
+                <li class="moreItem">
+                  <div class="imgBox">
+                    <img src="./assets/policy2.png" alt="news" />
+                  </div>
+                  <p>打造休閒天堂！推廣寵物休閒與娛樂場所</p>
+                </li>
+                <li class="moreItem">
+                  <div class="imgBox">
+                    <img src="./assets/policy3.png" alt="news" />
+                  </div>
+                  <p>推廣寵物飼養教育，讓愛更加專業</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="policy">
-      <div class="container">
-        <div class="titleBox">
-          <h3 class="blockTitle">POLICY ISSUES</h3>
-          <h2 class="gradientTitle">政策議題</h2>
+      <div class="moduleBox" data-module-name="donate">
+        <div class="moduleHead">
+          <div class="moduleTitle">小額捐款</div>
+          <div class="moduleClose">
+            <img src="./assets/model-close.png" alt="close" />
+          </div>
         </div>
-
-        <ul class="policyList">
-            <li class="policyItem">
-                <div class="policyInfo">
-                    <p>為毛孩子謀福利！<br/>推動寵物醫療保障方案</p>
-                </div>
-                <div class="policyImg">
-                    <img src="./assets/policy1.png" alt="為毛孩子謀福利！推動寵物醫療保障方案" >
-                </div>
-            </li>
-            <li class="policyItem">
-                <div class="policyInfo">
-                    <p>打造休閒天堂！<br/>推廣寵物休閒與娛樂場所</p>
-                </div>
-                <div class="policyImg">
-                    <img src="./assets/policy2.png" alt="打造休閒天堂！推廣寵物休閒與娛樂場所">
-                </div>
-            </li>
-            <li class="policyItem">
-                <div class="policyInfo">
-                    <p>推廣寵物飼養教育，讓愛更加專業</p>
-                </div>
-                <div class="policyImg">
-                    <img src="./assets/policy3.png" alt="推廣寵物飼養教育，讓愛更加專業">
-                </div>
-            </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="other">
-        <div class="container">
-            <div class="otherBox">
-                <div class="donateBox">
-                    <h2 class="otherTitle">小額支持喵喵</h2>
-                    <span class="otherSubtitle">您的小筆捐款，是每隻毛孩未來的大大動力！</span>
-                </div>
-                <div class="serviceBox">
-                    <h2 class="otherTitle">民眾服務信箱</h2>
-                    <span class="otherSubtitle">親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</span>
-                </div>
+        <div class="moduleContent">
+          <div class="leftBox">
+            <h2 class="title">您的小筆捐款<br />是每隻毛孩未來的大大動力！</h2>
+            <span class="desc">目前小額贊助總金額</span>
+            <div class="moneyBox">
+              <span class="money">1,000,000</span>
             </div>
+            <div class="imgBox">
+              <img src="./assets/donate.png" alt="donate" />
+            </div>
+          </div>
+          <div class="rightBox">
+            <p class="subtitle">捐款方案</p>
+            <ul class="donateList">
+              <li class="donateItem">
+                <span class="planName">喵星人之友</span>
+                <span class="amountBox">NT$ <span class="amount">600</span></span>
+                <span class="personBox">已有 <span class="person">9,957</span>人贊助</span>
+              </li>
+              <li class="donateItem">
+                <span class="planName">喵星大使</span>
+                <span class="amountBox">NT$ <span class="amount">6,000</span></span>
+                <span class="personBox">已有 <span class="person">9,957</span>人贊助</span>
+              </li>
+              <li class="donateItem">
+                <span class="planName">喵星傳奇</span>
+                <span class="amountBox">NT$ <span class="amount">60,000</span></span>
+                <span class="personBox">已有 <span class="person">9,957</span>人贊助</span>
+              </li>
+              <li class="donateItem custom">
+                <label class="planName">自訂贊助金額</label>
+                <div class="planInputBox">
+                  <span class="planLabel">NT$</span>
+                  <input type="tel" class="planInput" placeholder="輸入金額" />
+                </div>
+              </li>
+            </ul>
+            <div class="donateBtnBox">
+              <a href="#" class="donateBtn">前往捐款</a>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
 
     <script src="./js/gsap.min.js"></script>
     <script src="./js/ScrollTrigger.min.js"></script>
+    <script src="./js/lenis.min.js"></script>
 
-    <script>        
+    <script>
+      //lenis
+      let lenis = null;
+      function lenisInit() {
+        lenis = new Lenis();
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      }
+      lenisInit();
+
+      // mask
+      function handleLenisMask() {
+        const bodyDOM = document.querySelector("body");
+        const target = document.querySelector(".moduleMask");
+
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            const { attributeName, target } = mutation;
+            if (
+              attributeName === "class" &&
+              target.classList.contains("show")
+            ) {
+              bodyDOM.style.overflow = "hidden";
+              lenis.destroy();
+            } else {
+              bodyDOM.style.overflow = "auto";
+              lenisInit();
+            }
+          });
+        });
+
+        observer.observe(target, {
+          attributeFilter: ["class"],
+        });
+      }
+      handleLenisMask();
+
+      // header
+      const menus = [
+        ...document.querySelectorAll('.header .menuBox li a[href^="#"]'),
+      ];
+      menus.forEach((menu) => {
+        menu.addEventListener("click", (e) => {
+          e.preventDefault();
+          lenis.scrollTo(menu.getAttribute("href"));
+        });
+      });
+
+      // module
+      const module = {
+        isOpen: false,
+        targetModule: null,
+        maskDOM: document.querySelector(".moduleMask"),
+        trigger: document.querySelectorAll("[data-module]"),
+        triggerClose: document.querySelectorAll(".moduleClose"),
+        bindTriggerEvent() {
+          this.trigger.forEach((item) => {
+            item.addEventListener("click", (e) => {
+              e.preventDefault();
+              const target = document.querySelector(
+                `[data-module-name="${item.dataset.module}"]`
+              );
+              this.targetModule = target;
+              target.classList.add("show");
+              this.isOpen = true;
+              this.maskDOM.classList.add("show");
+            });
+          });
+        },
+        bindTriggerCloseEvent() {
+          this.triggerClose.forEach((item) => {
+            item.addEventListener("click", (e) => {
+              e.preventDefault();
+              const target = item.closest(".moduleBox");
+              this.targetModule = null;
+              target.classList.remove("show");
+              this.isOpen = false;
+              this.maskDOM.classList.remove("show");
+            });
+          });
+        },
+        bindMaskEvent() {
+          this.maskDOM.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (this.isOpen) {
+              this.targetModule = null;
+              this.targetModule.classList.remove("show");
+              this.isOpen = false;
+              this.maskDOM.classList.remove("show");
+            }
+          });
+        },
+        init() {
+          this.bindTriggerEvent();
+          this.bindTriggerCloseEvent();
+        },
+      };
+      module.init();
+
       //marquee
       const marquee = document.querySelector(".marquee");
       const marqueeContent = marquee.querySelector("span");
@@ -309,7 +698,6 @@
         duration: 10,
         ease: "none",
       });
-      
     </script>
   </body>
 </html>
