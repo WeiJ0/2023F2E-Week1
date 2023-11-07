@@ -32,9 +32,9 @@ svg {
   height: auto;
 }
 
-.footer .nameBox .no, .slogan .nameBox .no, .banner .textBox .nameBox .no, .banner h1, .gradientTitle {
-  background: linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
-  background: -webkit-linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
+.footer .mediaBox ul a:after, .footer .nameBox .no, .slogan .nameBox .no, .banner .textBox .nameBox .no, .banner h1, .header .mediaBox ul li:after, .gradientTitle {
+  background: linear-gradient(45deg, #e6793b 1.54%, #ff4185 97.86%);
+  background: -webkit-linear-gradient(45deg, #e6793b 1.54%, #ff4185 97.86%);
 }
 
 @font-face {
@@ -47,6 +47,18 @@ svg {
   font-family: "Mantou", sans-serif;
 }
 
+.footer .mediaBox ul a:after, .policyImg img, .policyInfo, .news .rightBox .newsItem .newsInfo .title, .newsItem .newsInfo .title, .newsImg img, .header .mediaBox ul li:after, .moduleClose {
+  transition: all 0.5s ease;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 .blockTitle {
   background-color: #334155;
   border-radius: 16px;
@@ -75,13 +87,26 @@ svg {
   background-color: #f1f5f9;
   border-radius: 500px;
   color: #334155;
+  cursor: pointer;
   display: flex;
+  overflow: hidden;
   padding: 22.5px 24px;
+  transition: all 0.35s ease-in-out;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1;
+}
+@media (min-width: 1201px) {
+  .btn:hover {
+    background-color: #334155;
+    color: #f1f5f9;
+  }
+  .btn:hover .arrow {
+    transform: translateX(60px);
+    filter: drop-shadow(-60px 0 0 #fff);
+  }
 }
 .btn .arrow {
   height: 20px;
@@ -89,6 +114,8 @@ svg {
   -o-object-fit: contain;
      object-fit: contain;
   width: 20px;
+  transition: transform 0.35s ease-in-out;
+  filter: drop-shadow(-60px 0 0 transparent);
 }
 .btn-2 {
   background-color: #fff;
@@ -136,10 +163,15 @@ svg {
   pointer-events: none;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: -1;
 }
 .moduleBox.show {
   opacity: 1;
+  pointer-events: auto;
+  z-index: 100;
+  transition: opacity 0.35s ease-in-out;
+}
+.moduleBox.show .moduleContent {
   pointer-events: auto;
 }
 .moduleHead {
@@ -158,7 +190,15 @@ svg {
 .moduleClose {
   cursor: pointer;
   height: 32px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   width: 32px;
+}
+@media (min-width: 1201px) {
+  .moduleClose:hover {
+    scale: 1.25;
+  }
 }
 .moduleClose img {
   max-width: 100%;
@@ -170,6 +210,7 @@ svg {
   max-height: 650px;
   overflow-y: auto;
   padding: 48px;
+  pointer-events: none;
 }
 .moduleContent .leftBox {
   margin-right: 32px;
@@ -252,69 +293,87 @@ svg {
 .moduleContent .rightBox .moreItem .imgBox {
   margin-bottom: 12px;
 }
-.moduleBox[data-module-name=donate] .leftBox {
+.moduleBox[data-module-name=donate] .leftBox, .moduleBox[data-module-name=service] .leftBox {
   background-color: #f7ece1;
   box-sizing: border-box;
   border-radius: 24px;
   margin-right: 32px;
+  position: relative;
   padding: 60px 60px 120px;
+  width: 55%;
 }
-.moduleBox[data-module-name=donate] .leftBox .title {
+.moduleBox[data-module-name=donate] .leftBox .title, .moduleBox[data-module-name=service] .leftBox .title {
   color: #da7d4a;
   margin-bottom: 16px;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.5;
 }
-.moduleBox[data-module-name=donate] .leftBox .desc {
+.moduleBox[data-module-name=donate] .leftBox .desc, .moduleBox[data-module-name=service] .leftBox .desc {
   color: #334155;
   margin-bottom: 16px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
 }
-.moduleBox[data-module-name=donate] .leftBox .money {
+.moduleBox[data-module-name=donate] .leftBox .money, .moduleBox[data-module-name=service] .leftBox .money {
   color: #334155;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.25;
 }
-.moduleBox[data-module-name=donate] .leftBox .imgBox {
+.moduleBox[data-module-name=donate] .leftBox .imgBox, .moduleBox[data-module-name=service] .leftBox .imgBox {
   font-size: 0;
   text-align: center;
   padding: 56px 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.moduleBox[data-module-name=donate] .leftBox .imgBox img {
+.moduleBox[data-module-name=donate] .leftBox .imgBox img, .moduleBox[data-module-name=service] .leftBox .imgBox img {
   max-width: 100%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.moduleBox[data-module-name=donate] .rightBox {
+.moduleBox[data-module-name=donate] .rightBox, .moduleBox[data-module-name=service] .rightBox {
   flex: 1;
+  width: 45%;
 }
-.moduleBox[data-module-name=donate] .rightBox .subtitle {
+.moduleBox[data-module-name=donate] .rightBox .beforeDonate,
+.moduleBox[data-module-name=donate] .rightBox .afterDonate, .moduleBox[data-module-name=service] .rightBox .beforeDonate,
+.moduleBox[data-module-name=service] .rightBox .afterDonate {
+  transition: all 0.85s ease-in-out;
+}
+.moduleBox[data-module-name=donate] .rightBox .subtitle, .moduleBox[data-module-name=service] .rightBox .subtitle {
   color: #334155;
   margin-bottom: 16px;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateList {
+.moduleBox[data-module-name=donate] .rightBox .planList, .moduleBox[data-module-name=service] .rightBox .planList {
   width: 100%;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem {
+.moduleBox[data-module-name=donate] .rightBox .planItem, .moduleBox[data-module-name=service] .rightBox .planItem {
   align-items: center;
   box-sizing: border-box;
-  border: 2px solid #E2E8F0;
+  border: 2px solid #e2e8f0;
   border-radius: 16px;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
   padding: 22.5px 16px;
+  transition: border-color 0.85s ease;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom, .moduleBox[data-module-name=service] .rightBox .planItem.custom {
   align-items: flex-start;
   flex-direction: column;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInput, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInput {
   background-color: transparent;
   border: none;
   border-radius: 8px;
@@ -326,34 +385,34 @@ svg {
   top: 0;
   width: 100%;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput:focus {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInput:focus, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInput:focus {
   outline-color: rgba(218, 125, 74, 0.35);
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput ::-webkit-input-placeholder {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInput ::-webkit-input-placeholder, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInput ::-webkit-input-placeholder {
   color: #94a3b8;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4444444444;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput :-moz-placeholder {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInput :-moz-placeholder, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInput :-moz-placeholder {
   color: #94a3b8;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4444444444;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput ::-moz-placeholder {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInput ::-moz-placeholder, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInput ::-moz-placeholder {
   color: #94a3b8;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4444444444;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInput :-ms-input-placeholder {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInput :-ms-input-placeholder, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInput :-ms-input-placeholder {
   color: #94a3b8;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.4444444444;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planInputBox {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInputBox, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInputBox {
   border-radius: 8px;
   box-sizing: border-box;
   background-color: #f1f5f9;
@@ -362,7 +421,7 @@ svg {
   position: relative;
   width: 100%;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.custom .planLabel {
+.moduleBox[data-module-name=donate] .rightBox .planItem.custom .planLabel, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planLabel {
   color: #334155;
   padding: 17.5px 0;
   position: absolute;
@@ -373,36 +432,39 @@ svg {
   font-weight: 400;
   line-height: 1.5;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem.selected {
+.moduleBox[data-module-name=donate] .rightBox .planItem.selected, .moduleBox[data-module-name=service] .rightBox .planItem.selected {
   border-color: #da7d4a;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem .planName {
+.moduleBox[data-module-name=donate] .rightBox .planItem span, .moduleBox[data-module-name=service] .rightBox .planItem span {
+  pointer-events: none;
+}
+.moduleBox[data-module-name=donate] .rightBox .planItem .planName, .moduleBox[data-module-name=service] .rightBox .planItem .planName {
   color: #da7d4a;
   flex: 1;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem .amount {
+.moduleBox[data-module-name=donate] .rightBox .planItem .amount, .moduleBox[data-module-name=service] .rightBox .planItem .amount {
   margin-left: 8px;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.5;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem .amountBox {
+.moduleBox[data-module-name=donate] .rightBox .planItem .amountBox, .moduleBox[data-module-name=service] .rightBox .planItem .amountBox {
   color: #334155;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateItem .personBox {
+.moduleBox[data-module-name=donate] .rightBox .planItem .personBox, .moduleBox[data-module-name=service] .rightBox .planItem .personBox {
   color: #94a3b8;
   padding: 0 0 0 24px;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4857142857;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateBtn {
+.moduleBox[data-module-name=donate] .rightBox .planBtn, .moduleBox[data-module-name=service] .rightBox .planBtn {
   align-items: center;
   background-color: #da7d4a;
   border-radius: 500px;
@@ -414,12 +476,135 @@ svg {
   font-weight: 400;
   line-height: 1rem 600 1.1rem/1rem 600 1.1rem;
 }
-.moduleBox[data-module-name=donate] .rightBox .donateBtnBox {
+.moduleBox[data-module-name=donate] .rightBox .planBtnBox, .moduleBox[data-module-name=service] .rightBox .planBtnBox {
   margin-top: 16px;
+}
+.moduleBox[data-module-name=donate] .rightBox .afterDonate, .moduleBox[data-module-name=service] .rightBox .afterDonate {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.moduleBox[data-module-name=donate] .rightBox .afterDonate .feedback, .moduleBox[data-module-name=service] .rightBox .afterDonate .feedback {
+  color: #334155;
+  margin-bottom: 32px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1428571429;
+}
+.moduleBox[data-module-name=donate] .rightBox .afterDonate .donateBtn, .moduleBox[data-module-name=service] .rightBox .afterDonate .donateBtn {
+  background-color: #f1f5f9;
+  border-radius: 500px;
+  color: #334155;
+  padding: 16px 96px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.moduleBox[data-module-name=donate] .rightBox .afterDonate .donateBtnBox, .moduleBox[data-module-name=service] .rightBox .afterDonate .donateBtnBox {
+  margin-top: 32px;
+}
+.moduleBox[data-module-name=donate] .rightBox .afterDonate .donateIcon svg, .moduleBox[data-module-name=service] .rightBox .afterDonate .donateIcon svg {
+  height: 170px;
+  width: 190px;
+}
+.moduleBox[data-module-name=donate][data-status=before] .beforeDonate, .moduleBox[data-module-name=service][data-status=before] .beforeDonate {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+.moduleBox[data-module-name=donate][data-status=before] .afterDonate, .moduleBox[data-module-name=service][data-status=before] .afterDonate {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+.moduleBox[data-module-name=donate][data-status=after] .beforeDonate, .moduleBox[data-module-name=service][data-status=after] .beforeDonate {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+.moduleBox[data-module-name=donate][data-status=after] .afterDonate, .moduleBox[data-module-name=service][data-status=after] .afterDonate {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+.moduleBox[data-module-name=service] .leftBox {
+  background-color: #e3f8ff;
+  border-radius: 8px;
+  padding: 60px 0 0;
+}
+.moduleBox[data-module-name=service] .leftBox .title {
+  margin-bottom: 0;
+  padding: 0 60px;
+}
+.moduleBox[data-module-name=service] .leftBox .imgBox {
+  bottom: 0;
+  margin-bottom: 0;
+  padding: 0;
+  right: 0;
+  width: 100%;
+}
+
+.mouse {
+  --x: 0px;
+  --y: 0px;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  width: 100%;
+  z-index: 1010;
+}
+.mouseBox {
+  border-radius: 50%;
+  height: 16px;
+  scale: var(--scale);
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  rotate: 10deg;
+  translate: var(--x) var(--y);
+  transition: translate var(--delay) ease-out, scale 0.4s, opacity 0.4s;
+  width: 16px;
+}
+.mouseBox.hover:first-of-type {
+  background-image: url("../assets/ico.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: scale 0.4s;
+  opacity: 0.5;
+  scale: 5;
+}
+.mouseBox.hover:not(:first-of-type) {
+  opacity: 0;
+}
+
+[data-hoverItem] * {
+  pointer-events: none;
 }
 
 body {
-  font-family: "Inter", "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans TC", "Inter", sans-serif;
+  position: relative;
+}
+body.isLoading {
+  overflow: hidden;
+}
+
+.loadingBox {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .outerBox {
@@ -456,13 +641,21 @@ body {
 
 .header {
   align-items: center;
+  box-sizing: border-box;
   background-color: #fff;
   display: flex;
+  height: 100px;
   justify-content: space-between;
+  position: fixed;
   padding: 28px 48px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 95;
 }
 .header .logoBox {
   align-items: center;
+  cursor: pointer;
   display: flex;
 }
 .header .logoBox span {
@@ -489,6 +682,30 @@ body {
 .header .mediaBox ul {
   display: flex;
 }
+.header .mediaBox ul li {
+  position: relative;
+}
+@media (min-width: 1201px) {
+  .header .mediaBox ul li:hover:after {
+    position: absolute;
+    content: "";
+    transform: scale(1);
+  }
+}
+.header .mediaBox ul li:after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 43px;
+  opacity: 0.35;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  transform: scale(0);
+  transform-origin: center;
+  width: 43px;
+  z-index: -1;
+}
 .header .mediaBox ul li:not(:last-child) {
   margin-right: 16px;
 }
@@ -497,7 +714,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 96px 0 0;
+  padding: 100px 0 0;
 }
 .banner h1 {
   background-clip: text;
@@ -558,6 +775,7 @@ body {
 }
 .banner .bg {
   font-size: 0;
+  height: 400px;
   margin-top: auto;
   position: relative;
   text-align: center;
@@ -588,6 +806,14 @@ body {
   font-size: 4rem;
   font-weight: 400;
   line-height: 1;
+}
+@media (min-width: 1201px) {
+  .marquee:hover span {
+    animation-play-state: paused;
+  }
+}
+.marquee span {
+  animation: marquee 30s linear infinite;
 }
 
 .advocate {
@@ -689,6 +915,17 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+.newsItem {
+  cursor: pointer;
+}
+@media (min-width: 1201px) {
+  .newsItem:hover img {
+    scale: 1.1;
+  }
+  .newsItem:hover .newsInfo .title {
+    color: #da7d4a;
+  }
+}
 .news .leftBox .newsItem {
   display: flex;
   flex-direction: column;
@@ -727,9 +964,18 @@ body {
        column-gap: 64px;
 }
 .policyItem {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (min-width: 1201px) {
+  .policyItem:hover .policyInfo {
+    color: #da7d4a;
+  }
+  .policyItem:hover .policyImg img {
+    scale: 1.1;
+  }
 }
 .policyInfo {
   color: #334155;
@@ -739,7 +985,10 @@ body {
   font-weight: 700;
   line-height: 1.5;
 }
-
+.policyImg {
+  border-radius: 24px;
+  overflow: hidden;
+}
 .other {
   padding: 104px 0;
 }
@@ -879,15 +1128,37 @@ body {
   background-color: #fff;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
   height: 48px;
+  justify-content: center;
+  position: relative;
   width: 48px;
+}
+@media (min-width: 1201px) {
+  .footer .mediaBox ul a:hover:after {
+    position: absolute;
+    content: "";
+    transform: scale(1);
+  }
+}
+.footer .mediaBox ul a:after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 100%;
+  left: 0;
+  opacity: 0.35;
+  transform: scale(0);
+  transform-origin: center;
+  top: 0;
+  width: 100%;
 }
 .footer .mediaBox ul a img {
   height: 28px;
   width: 28px;
   -o-object-fit: contain;
      object-fit: contain;
+  position: relative;
+  z-index: 3;
 }
 .footer .copyRight {
   color: #334155;
@@ -901,6 +1172,76 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.3333333333;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+}
+.formRow label {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.formRow input,
+.formRow textarea {
+  background-color: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+}
+.formRow input:focus,
+.formRow textarea:focus {
+  outline-color: rgba(51, 65, 85, 0.35);
+}
+.formRow input ::-webkit-input-placeholder,
+.formRow textarea ::-webkit-input-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.formRow input :-moz-placeholder,
+.formRow textarea :-moz-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.formRow input ::-moz-placeholder,
+.formRow textarea ::-moz-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.formRow input :-ms-input-placeholder,
+.formRow textarea :-ms-input-placeholder {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.4444444444;
+}
+.formRow textarea {
+  max-height: 176px;
+  resize: none;
+}
+.formBtn {
+  align-items: center;
+  background-color: #da7d4a;
+  border: none;
+  border-radius: 500px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 html.lenis {

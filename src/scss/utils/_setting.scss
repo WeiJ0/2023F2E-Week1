@@ -3,11 +3,12 @@ $textColor: #334155;
 $textSecondaryColor: #94a3b8;
 $bgColor: #fdfcfb;
 $bgSecondaryColor: #f7ece1;
-$disabledColor: #E2E8F0;
+$disabledColor: #e2e8f0;
+$inputBgColor: #f1f5f9;
 
 %mainGradient {
-  background: linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
-  background: -webkit-linear-gradient(90deg, #e6793b 1.54%, #ff4185 97.86%);
+  background: linear-gradient(45deg, #e6793b 1.54%, #ff4185 97.86%);
+  background: -webkit-linear-gradient(45deg, #e6793b 1.54%, #ff4185 97.86%);
 }
 
 @font-face {
@@ -23,4 +24,17 @@ $disabledColor: #E2E8F0;
 
 %fontEn {
   font-family: "Inter", sans-serif;
+}
+
+%ts {
+  transition: all 0.5s ease;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

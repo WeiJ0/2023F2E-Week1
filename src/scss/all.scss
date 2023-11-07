@@ -29,16 +29,31 @@
   background-color: #f1f5f9;
   border-radius: 500px;
   color: $textColor;
+  cursor: pointer;
   display: flex;
+  overflow: hidden;
   padding: 22.5px 24px;
+  transition: all 0.35s ease-in-out;
   width: fit-content;
   @include fontSet(1rem, 600, 1rem);
+
+  @include hover {
+    background-color: $textColor;
+    color: #f1f5f9;
+
+    .arrow {
+      transform: translateX(60px);
+      filter: drop-shadow(-60px 0 0 #fff);
+    }
+  }
 
   .arrow {
     height: 20px;
     margin-left: 12px;
     object-fit: contain;
     width: 20px;
+    transition: transform 0.35s ease-in-out;
+    filter: drop-shadow(-60px 0 0 transparent);
   }
 
   &-2 {
@@ -90,11 +105,17 @@
     pointer-events: none;
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: -1;
 
     &.show {
       opacity: 1;
       pointer-events: auto;
+      z-index: 100;
+      transition: opacity 0.35s ease-in-out;
+
+      .moduleContent {
+        pointer-events: auto;
+      }
     }
   }
 
@@ -114,7 +135,13 @@
   &Close {
     cursor: pointer;
     height: 32px;
+    user-select: none;
     width: 32px;
+    @extend %ts;
+
+    @include hover {
+      scale: 1.25;
+    }
 
     img {
       max-width: 100%;
@@ -127,6 +154,7 @@
     max-height: 650px;
     overflow-y: auto;
     padding: 48px;
+    pointer-events: none;
 
     .leftBox {
       margin-right: 32px;
@@ -218,13 +246,16 @@
     }
   }
 
-  &Box[data-module-name="donate"] {
+  &Box[data-module-name="donate"],
+  &Box[data-module-name="service"] {
     .leftBox {
       background-color: $bgSecondaryColor;
       box-sizing: border-box;
       border-radius: 24px;
       margin-right: 32px;
+      position: relative;
       padding: 60px 60px 120px;
+      width: 55%;
 
       .title {
         color: $primaryColor;
@@ -247,15 +278,25 @@
         font-size: 0;
         text-align: center;
         padding: 56px 0;
+        pointer-events: none;
+        user-select: none;
 
         img {
           max-width: 100%;
+          pointer-events: none;
+          user-select: none;
         }
       }
     }
 
     .rightBox {
       flex: 1;
+      width: 45%;
+
+      .beforeDonate,
+      .afterDonate {
+        transition: all 0.85s ease-in-out;
+      }
 
       .subtitle {
         color: $textColor;
@@ -263,7 +304,7 @@
         @include fontSet(1.25rem, 700, 1.5rem);
       }
 
-      .donate {
+      .plan {
         &List {
           width: 100%;
         }
@@ -273,10 +314,12 @@
           box-sizing: border-box;
           border: 2px solid $disabledColor;
           border-radius: 16px;
+          cursor: pointer;
           display: flex;
           justify-content: space-between;
           margin-bottom: 16px;
           padding: 22.5px 16px;
+          transition: border-color 0.85s ease;
 
           &.custom {
             align-items: flex-start;
@@ -331,6 +374,10 @@
             border-color: $primaryColor;
           }
 
+          span {
+            pointer-events: none;
+          }
+
           .planName {
             color: $primaryColor;
             flex: 1;
@@ -364,17 +411,159 @@
           padding: 24px 0;
           @include fontSet(1rem 600 1.1rem);
 
-          &Box{
+          &Box {
             margin-top: 16px;
           }
         }
+      }
+
+      .afterDonate {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+
+        .feedback {
+          color: $textColor;
+          margin-bottom: 32px;
+          @include fontSet(1.75rem, 700, 2rem);
+        }
+
+        .donateBtn {
+          &Box {
+            margin-top: 32px;
+          }
+          background-color: #f1f5f9;
+          border-radius: 500px;
+          color: $textColor;
+          padding: 16px 96px;
+          @include fontSet(1rem, 600, 1rem);
+        }
+
+        .donateIcon {
+          svg {
+            height: 170px;
+            width: 190px;
+          }
+        }
+      }
+    }
+
+    &[data-status="before"] {
+      .beforeDonate {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .afterDonate {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    &[data-status="after"] {
+      .beforeDonate {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .afterDonate {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &Box[data-module-name="service"] {
+    .leftBox {
+      background-color: #e3f8ff;
+      border-radius: 8px;
+      padding: 60px 0 0;
+
+      .title {
+        margin-bottom: 0;
+        padding: 0 60px;
+      }
+
+      .imgBox {
+        bottom: 0;
+        margin-bottom: 0;
+        padding: 0;
+        right: 0;
+        width: 100%;
       }
     }
   }
 }
 
+.mouse {
+  --x: 0px;
+  --y: 0px;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  width: 100%;
+  z-index: 1010;
+
+  &Box {
+    border-radius: 50%;
+    height: 16px;
+    scale: var(--scale);
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    rotate: 10deg;
+    translate: var(--x) var(--y);
+    transition: translate var(--delay) ease-out, scale 0.4s, opacity 0.4s;
+    width: 16px;
+
+    &.hover {
+      &:first-of-type {
+        background-image: url("../assets/ico.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: scale 0.4s;
+        opacity: 0.5;
+        scale: 5;
+      }
+
+      &:not(:first-of-type) {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+[data-hoverItem] * {
+  pointer-events: none;
+}
+
 body {
-  font-family: "Inter", "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans TC", "Inter", sans-serif;
+  position: relative;
+
+  &.isLoading {
+    overflow: hidden;
+  }
+}
+
+.loadingBox {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .outerBox {
@@ -407,13 +596,21 @@ body {
 
 .header {
   align-items: center;
+  box-sizing: border-box;
   background-color: #fff;
   display: flex;
+  height: 100px;
   justify-content: space-between;
+  position: fixed;
   padding: 28px 48px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 95;
 
   .logoBox {
     align-items: center;
+    cursor: pointer;
     display: flex;
 
     span {
@@ -449,6 +646,29 @@ body {
       display: flex;
 
       li {
+        position: relative;
+
+        @include hover {
+          @include after {
+            transform: scale(1);
+          }
+        }
+
+        @include after {
+          border-radius: 50%;
+          height: 43px;
+          opacity: 0.35;
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          transform: scale(0);
+          transform-origin: center;
+          width: 43px;
+          z-index: -1;
+          @extend %mainGradient;
+          @extend %ts;
+        }
+
         &:not(:last-child) {
           margin-right: 16px;
         }
@@ -461,7 +681,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 96px 0 0;
+  padding: 100px 0 0;
 
   h1 {
     background-clip: text;
@@ -522,6 +742,7 @@ body {
 
   .bg {
     font-size: 0;
+    height: 400px;
     margin-top: auto;
     position: relative;
     text-align: center;
@@ -555,6 +776,16 @@ body {
   word-wrap: nowrap;
   @include fontSet(4rem, 400, 4rem);
   @extend %fontMantou;
+
+  @include hover{
+    span{
+      animation-play-state: paused;
+    }
+  }
+
+  span {
+    animation: marquee 30s linear infinite;
+  }
 }
 
 .advocate {
@@ -633,6 +864,10 @@ body {
     border-radius: 16px;
     font-size: 0;
     overflow: hidden;
+
+    img {
+      @extend %ts;
+    }
   }
 
   &Info {
@@ -654,6 +889,28 @@ body {
       margin-top: 8px;
       @include fontSet(1rem, 400, 1.5rem);
       @include maxLine(2);
+    }
+  }
+
+  &Item {
+    cursor: pointer;
+
+    .newsInfo {
+      .title {
+        @extend %ts;
+      }
+    }
+
+    @include hover {
+      img {
+        scale: 1.1;
+      }
+
+      .newsInfo {
+        .title {
+          color: $primaryColor;
+        }
+      }
     }
   }
 
@@ -679,6 +936,7 @@ body {
 
         .title {
           @include fontSet(1rem, 700, 1.1875rem);
+          @extend %ts;
         }
       }
     }
@@ -704,9 +962,22 @@ body {
   }
 
   &Item {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include hover {
+      .policyInfo {
+        color: $primaryColor;
+      }
+
+      .policyImg {
+        img {
+          scale: 1.1;
+        }
+      }
+    }
   }
 
   &Info {
@@ -714,6 +985,16 @@ body {
     margin-bottom: 16px;
     padding: 0 16px;
     @include fontSet(1.5rem, 700, 2.25rem);
+    @extend %ts;
+  }
+
+  &Img {
+    border-radius: 24px;
+    overflow: hidden;
+
+    img {
+      @extend %ts;
+    }
   }
 }
 
@@ -863,14 +1144,36 @@ body {
         background-color: #fff;
         border-radius: 50%;
         display: flex;
-        justify-content: center;
         height: 48px;
+        justify-content: center;
+        position: relative;
         width: 48px;
+
+        @include hover{
+          @include after{
+            transform: scale(1);
+          }
+        }
+
+        @include after {
+          border-radius: 50%;
+          height: 100%;
+          left: 0;
+          opacity: 0.35;
+          transform: scale(0);
+          transform-origin: center;
+          top: 0;
+          width: 100%;
+          @extend %mainGradient;
+          @extend %ts;
+        }
 
         img {
           height: 28px;
           width: 28px;
           object-fit: contain;
+          position: relative;
+          z-index: 3;
         }
       }
     }
@@ -887,6 +1190,55 @@ body {
       color: $textColor;
       @include fontSet(1.5rem, 700, 2rem);
     }
+  }
+}
+
+.form {
+  &Row {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      color: $textColor;
+      margin-bottom: 8px;
+      @include fontSet(1.25rem, 700, 1.5rem);
+    }
+
+    input,
+    textarea {
+      background-color: $inputBgColor;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      padding: 16px;
+
+      &:focus {
+        outline-color: rgba($textColor, 0.35);
+      }
+
+      @include placeholder {
+        color: $textSecondaryColor;
+        @include fontSet(1.125rem, 400, 1.625rem);
+      }
+    }
+
+    textarea {
+      max-height: 176px;
+      resize: none;
+    }
+  }
+
+  &Btn {
+    align-items: center;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 500px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    width: 100%;
+    @include fontSet(1rem, 600, 1.1rem);
   }
 }
 
