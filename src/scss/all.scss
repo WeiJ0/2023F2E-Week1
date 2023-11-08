@@ -3,7 +3,7 @@
 @import "utils/often";
 @import "utils/setting";
 
-//common
+/* 共同使用 */
 
 .blockTitle {
   background-color: $textColor;
@@ -704,6 +704,28 @@
 
 [data-hoverItem] * {
   pointer-events: none;
+}
+
+.lenis{
+  &.lenis-smooth {
+    scroll-behavior: smooth;
+
+    [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+  }
+
+  &.lenis-stopped {
+    overflow: hidden;
+  }
+
+  &.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+html.lenis{
+  height: auto;
 }
 
 body {
@@ -1762,24 +1784,4 @@ body {
       @include fontSet(0.625rem, 400, 0.75rem);
     }
   }
-}
-
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
 }

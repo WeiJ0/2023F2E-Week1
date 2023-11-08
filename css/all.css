@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -59,6 +60,7 @@ svg {
     transform: translateX(-100%);
   }
 }
+/* 共同使用 */
 .blockTitle {
   background-color: #334155;
   border-radius: 16px;
@@ -780,6 +782,23 @@ svg {
 
 [data-hoverItem] * {
   pointer-events: none;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: smooth;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+html.lenis {
+  height: auto;
 }
 
 body {
@@ -1871,24 +1890,4 @@ body.isLoading {
   font-size: 0.625rem;
   font-weight: 400;
   line-height: 1.2;
-}
-
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
 }/*# sourceMappingURL=all.css.map */
