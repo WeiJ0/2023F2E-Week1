@@ -22,6 +22,10 @@
   @include fontSet(4rem, 400, 5.8rem);
   @extend %fontMantou;
   @extend %mainGradient;
+
+  @include media(768) {
+    @include fontSet(3.25rem, 400, 4.75rem);
+  }
 }
 
 .btn {
@@ -36,6 +40,10 @@
   transition: all 0.35s ease-in-out;
   width: fit-content;
   @include fontSet(1rem, 600, 1rem);
+
+  @include media(768) {
+    padding: 20px 24px;
+  }
 
   @include hover {
     background-color: $textColor;
@@ -107,6 +115,11 @@
     width: 100%;
     z-index: -1;
 
+    @include media(768) {
+      max-width: 90%;
+      padding: 16px 24px;
+    }
+
     &.show {
       opacity: 1;
       pointer-events: auto;
@@ -125,11 +138,19 @@
     justify-content: space-between;
     max-width: 1400px;
     padding: 0 48px;
+
+    @include media(768) {
+      padding: 8px 0 8px 16px;
+    }
   }
 
   &Title {
     color: $textColor;
     @include fontSet(2rem, 700, 2rem);
+
+    @include media(768) {
+      @include fontSet(1.5rem, 700, 2.25rem);
+    }
   }
 
   &Close {
@@ -153,20 +174,43 @@
     display: flex;
     max-height: 650px;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 48px;
     pointer-events: none;
+
+    @include media(768) {
+      flex-direction: column;
+      padding: 16px;
+    }
+
+    @include media(640) {
+      padding: 16px 0;
+    }
 
     .leftBox {
       margin-right: 32px;
 
+      @include media(768) {
+        margin-right: 0;
+      }
+
       .imgBox {
         margin-bottom: 16px;
+
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
       }
 
       .text {
         color: $textColor;
         margin-bottom: 8px;
         @include fontSet(0.875rem, 400, 1.3rem);
+
+        @include media(768) {
+          @include fontSet(1rem, 400, 1.5rem);
+        }
       }
 
       .date {
@@ -190,6 +234,15 @@
         color: $primaryColor;
         margin-bottom: 32px;
         @include fontSet(2rem, 700, 2rem);
+
+        @include media(768) {
+          margin-top: 32px;
+          margin-bottom: 32px;
+        }
+
+        @include media(420) {
+          @include fontSet(1.5rem, 700 2rem);
+        }
       }
 
       .subtitle {
@@ -206,11 +259,19 @@
         color: $textSecondaryColor;
         margin-bottom: 40px;
         @include fontSet(0.875rem, 400, 1.3rem);
+
+        @include media(768) {
+          margin-bottom: 8px;
+        }
       }
 
       .desc {
         color: $textColor;
         @include fontSet(1rem, 400, 1.5rem);
+
+        @include media(768) {
+          margin-top: 32px;
+        }
       }
 
       .more {
@@ -229,13 +290,26 @@
 
         &List {
           display: flex;
+
+          @include media(640) {
+            flex-direction: column;
+          }
         }
 
         &Item {
           width: calc(100% / 3);
 
+          @include media(640) {
+            width: 100%;
+          }
+
           &:not(:last-child) {
             margin-right: 16px;
+
+            @include media(640) {
+              margin-right: 0;
+              margin-bottom: 16px;
+            }
           }
 
           .imgBox {
@@ -257,10 +331,31 @@
       padding: 60px 60px 120px;
       width: 55%;
 
+      @include media(768) {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 24px;
+        padding: 24px;
+        width: 100%;
+      }
+
+      @include media(520) {
+        align-items: center;
+      }
+
       .title {
         color: $primaryColor;
         margin-bottom: 16px;
         @include fontSet(2.5rem, 700, 3.75rem);
+
+        @include media(768) {
+          @include fontSet(1.5rem, 700, 2rem);
+        }
+
+        @include media(640) {
+          @include fontSet(1rem, 700, 1.5rem);
+        }
       }
 
       .desc {
@@ -281,6 +376,16 @@
         pointer-events: none;
         user-select: none;
 
+        @include media(768) {
+          max-width: 150px;
+          margin-bottom: 0;
+          padding: 0;
+        }
+
+        @include media(640) {
+          max-width: 80px;
+        }
+
         img {
           max-width: 100%;
           pointer-events: none;
@@ -292,6 +397,10 @@
     .rightBox {
       flex: 1;
       width: 45%;
+
+      @include media(768) {
+        width: 100%;
+      }
 
       .beforeDonate,
       .afterDonate {
@@ -320,6 +429,10 @@
           margin-bottom: 16px;
           padding: 22.5px 16px;
           transition: border-color 0.85s ease;
+
+          @include media(520) {
+            flex-wrap: wrap;
+          }
 
           &.custom {
             align-items: flex-start;
@@ -382,6 +495,10 @@
             color: $primaryColor;
             flex: 1;
             @include fontSet(1.25rem, 700, 1.5rem);
+
+            @include media(520) {
+              flex-basis: 100%;
+            }
           }
 
           .amount {
@@ -409,10 +526,18 @@
           display: flex;
           justify-content: center;
           padding: 24px 0;
-          @include fontSet(1rem 600 1.1rem);
+          @include fontSet(1rem, 600, 1.1rem);
 
           &Box {
             margin-top: 16px;
+          }
+
+          .loading {
+            display: none;
+
+            &.show {
+              display: block;
+            }
           }
         }
       }
@@ -483,9 +608,21 @@
       border-radius: 8px;
       padding: 60px 0 0;
 
+      @include media(768) {
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+      }
+
       .title {
+        color: $textColor;
         margin-bottom: 0;
         padding: 0 60px;
+
+        @include media(768) {
+          padding: 0;
+          max-width: 180px;
+        }
       }
 
       .imgBox {
@@ -494,6 +631,27 @@
         padding: 0;
         right: 0;
         width: 100%;
+
+        @include media(768) {
+          max-width: 200px;
+          height: 150px;
+        }
+
+        img {
+          height: 100%;
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .formBtn {
+      .loading {
+        display: none;
+
+        &.show {
+          display: block;
+        }
       }
     }
   }
@@ -509,6 +667,10 @@
   top: 0;
   width: 100%;
   z-index: 1010;
+
+  @include media(1280) {
+    display: none;
+  }
 
   &Box {
     border-radius: 50%;
@@ -578,19 +740,20 @@ body {
   width: 100%;
 
   @include media(1200) {
-    max-width: 1140px;
+    max-width: min(1140px, 90%);
   }
 
   @include media(992) {
-    max-width: 960px;
+    max-width: min(960px, 90%);
   }
 
   @include media(768) {
-    max-width: 720px;
+    max-width: min(720px, 90%);
+    padding: 0 1.5rem;
   }
 
   @include media(576) {
-    max-width: 54px;
+    max-width: min(540px, 90%);
   }
 }
 
@@ -608,10 +771,22 @@ body {
   width: 100%;
   z-index: 95;
 
+  @include media(520) {
+    height: 56px;
+    padding: 0 16px;
+  }
+
   .logoBox {
     align-items: center;
     cursor: pointer;
     display: flex;
+
+    img {
+      @include media(520) {
+        height: 28px;
+        width: 34px;
+      }
+    }
 
     span {
       color: $primaryColor;
@@ -619,10 +794,18 @@ body {
       font-weight: 700;
       line-height: 1.5;
       margin-left: 8px;
+
+      @include media(640) {
+        font-size: 1.25rem;
+      }
     }
   }
 
   .menuBox {
+    @include media(1280) {
+      display: none;
+    }
+
     ul {
       align-items: center;
       display: flex;
@@ -642,6 +825,9 @@ body {
   }
 
   .mediaBox {
+    @include media(520) {
+      display: none;
+    }
     ul {
       display: flex;
 
@@ -682,6 +868,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 100px 0 0;
+  position: relative;
 
   h1 {
     background-clip: text;
@@ -693,6 +880,12 @@ body {
     @include fontSet(6rem, 400, 6.3rem);
     @extend %fontMantou;
     @extend %mainGradient;
+
+    @include media(768) {
+      max-width: 320px;
+      margin: 0 auto 16px;
+      @include fontSet(3.25rem, 400, 3.375rem);
+    }
   }
 
   .textBox {
@@ -701,6 +894,19 @@ body {
     justify-content: center;
     margin-bottom: 120px;
 
+    @include media(768) {
+      margin-bottom: 22px;
+    }
+
+    @include media(520) {
+      flex-direction: column;
+      margin-bottom: 62px;
+    }
+
+    @include media(420) {
+      margin-bottom: 82px;
+    }
+
     .titleName {
       background-color: $textColor;
       border-radius: 16px;
@@ -708,6 +914,10 @@ body {
       height: fit-content;
       padding: 12px 16px;
       @include fontSet(1.75rem, 700, 2rem);
+
+      @include media(768) {
+        @include fontSet(1.25rem, 700, 1.5rem);
+      }
     }
 
     .nameBox {
@@ -718,6 +928,11 @@ body {
       display: flex;
       margin-left: 16px;
       padding: 16px;
+
+      @include media(768) {
+        margin-left: 0;
+        padding: 12px 16px;
+      }
 
       .no {
         align-items: center;
@@ -731,11 +946,23 @@ body {
         width: 50px;
         @include fontSet(2rem, 900, 3rem);
         @extend %mainGradient;
+
+        @include media(768) {
+          @include fontSet(1.5rem, 900, 2.3rem);
+        }
       }
 
       .name {
         color: $primaryColor;
         @include fontSet(2.5rem, 700, 4rem);
+
+        @include media(768) {
+          @include fontSet(1.75rem, 700, 2.625rem);
+        }
+
+        @include media(420) {
+          @include fontSet(1.25rem, 700, 2rem);
+        }
       }
     }
   }
@@ -747,8 +974,16 @@ body {
     position: relative;
     text-align: center;
 
+    @include media(768) {
+      height: auto;
+    }
+
     .bannerBg {
       max-height: 400px;
+
+      @include media(768) {
+        max-height: 250px;
+      }
     }
 
     .person {
@@ -761,6 +996,60 @@ body {
       img {
         max-height: 500px;
         max-width: 100%;
+
+        @include media(768) {
+          max-height: 250px;
+        }
+      }
+    }
+  }
+
+  .mediaBox {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 80;
+
+    @include media(-521) {
+      display: none;
+    }
+
+    ul {
+      align-items: center;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      padding: 10px 40px;
+
+      li {
+        position: relative;
+
+        @include hover {
+          @include after {
+            transform: scale(1);
+          }
+        }
+
+        @include after {
+          border-radius: 50%;
+          height: 43px;
+          opacity: 0.35;
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          transform: scale(0);
+          transform-origin: center;
+          width: 43px;
+          z-index: -1;
+          @extend %mainGradient;
+          @extend %ts;
+        }
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
       }
     }
   }
@@ -769,21 +1058,23 @@ body {
 .marquee {
   background-color: $primaryColor;
   color: #fff;
-  display: flex;
   overflow: hidden;
   padding: 10px;
-  word-break: keep-all;
-  word-wrap: nowrap;
   @include fontSet(4rem, 400, 4rem);
   @extend %fontMantou;
 
-  @include hover{
-    span{
+  @include media(768) {
+    @include fontSet(2.5rem, 400, 2.625rem);
+  }
+
+  @include hover {
+    span {
       animation-play-state: paused;
     }
   }
 
-  span {
+  p {
+    white-space: nowrap;
     animation: marquee 30s linear infinite;
   }
 }
@@ -792,11 +1083,19 @@ body {
   background-color: $bgSecondaryColor;
   padding: 105px 0;
 
+  @include media(768) {
+    padding: 64px 0;
+  }
+
   &Box {
     border-radius: 40px;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     overflow: hidden;
+
+    @include media(768) {
+      display: block;
+    }
 
     > * {
       height: 100%;
@@ -809,6 +1108,10 @@ body {
     display: flex;
     flex-direction: column;
     padding: 64px 40px;
+
+    @include media(520) {
+      padding: 40px 20px;
+    }
   }
 
   .imgBox {
@@ -818,6 +1121,10 @@ body {
       height: 100%;
       object-fit: cover;
       max-width: 100%;
+
+      @include media(768) {
+        width: 100%;
+      }
     }
   }
 
@@ -825,6 +1132,10 @@ body {
     color: $textColor;
     margin-top: 32px;
     @include fontSet(1.75rem, 700, 2.1rem);
+
+    @include media(520) {
+      @include fontSet(1.5rem, 700, 2rem);
+    }
 
     em {
       color: $primaryColor;
@@ -842,9 +1153,17 @@ body {
 .news {
   padding: 104px 0;
 
+  @include media(768) {
+    padding: 64px 0;
+  }
+
   .titleBox {
     text-align: center;
     margin-bottom: 64px;
+
+    @include media(768) {
+      margin-bottom: 40px;
+    }
 
     .blockTitle {
       margin: auto;
@@ -855,8 +1174,16 @@ body {
     display: flex;
     column-gap: 24px;
 
+    @include media(768) {
+      display: block;
+    }
+
     > * {
       width: 50%;
+
+      @include media(768) {
+        width: 100%;
+      }
     }
   }
 
@@ -866,7 +1193,12 @@ body {
     overflow: hidden;
 
     img {
+      max-width: 100%;
       @extend %ts;
+
+      @include media(768) {
+        width: 100%;
+      }
     }
   }
 
@@ -922,12 +1254,26 @@ body {
   }
 
   .rightBox {
+    @include media(768) {
+      margin-top: 24px;
+    }
+
     .newsItem {
       display: flex;
       margin-bottom: 24px;
 
       .newsImg {
         max-width: 200px;
+
+        @include media(768) {
+          max-width: 110px;
+        }
+
+        img {
+          height: 100%;
+          max-width: 100%;
+          object-fit: cover;
+        }
       }
 
       .newsInfo {
@@ -944,7 +1290,12 @@ body {
 }
 
 .policy {
+  background-color: $bgColor;
   padding: 104px 0;
+
+  @include media(768) {
+    padding: 64px 0;
+  }
 
   .titleBox {
     text-align: center;
@@ -959,6 +1310,16 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 64px;
+
+    @include media(768) {
+      column-gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 64px;
+    }
+
+    @include media(740) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &Item {
@@ -1001,10 +1362,23 @@ body {
 .other {
   padding: 104px 0;
 
+  @include media(768) {
+    padding: 60px 0;
+  }
+
   &Box {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     column-gap: 24px;
+
+    @include media(768) {
+      display: flex;
+      column-gap: initial;
+    }
+
+    @include media(700) {
+      flex-direction: column;
+    }
 
     > * {
       border-radius: 32px;
@@ -1012,23 +1386,53 @@ body {
       flex-direction: column;
       justify-content: space-between;
       padding: 96px;
+
+      @include media(1280) {
+        padding: 70px;
+      }
+
+      @include media(768) {
+        padding: 40px 24px;
+        width: calc(100% / 2);
+      }
+
+      @include media(700) {
+        max-width: 100%;
+        width: 90%;
+      }
+
+      @include media(520) {
+        width: fit-content;
+      }
     }
   }
 
   .donateBox {
     background-color: $primaryColor;
     color: #fff;
+
+    @include media(768) {
+      margin-bottom: 24px;
+    }
   }
 
   .serviceBox {
     background-color: $textColor;
     color: #fff;
+
+    .btn + img {
+      transform: translateY(15px);
+    }
   }
 
   &Title {
     margin-bottom: 16px;
     @include fontSet(3.25rem, 400, 4.6rem);
     @extend %fontMantou;
+
+    @include media(768) {
+      @include fontSet(2.5rem, 400, 3.6rem);
+    }
   }
 
   &Subtitle {
@@ -1039,10 +1443,37 @@ body {
   &Btn {
     height: fit-content;
     margin-right: 50px;
+
+    @include media(768) {
+      margin-right: 8px;
+    }
+
     &Box {
       align-items: flex-end;
       display: flex;
       margin-top: 24px;
+
+      @include media(768) {
+        justify-content: space-between;
+      }
+
+      img {
+        object-fit: contain;
+
+        @include media(1440) {
+          max-width: 200px;
+        }
+
+        @include media(768) {
+          height: 125px;
+          max-width: 125px;
+        }
+
+        @include media(365) {
+          height: 80px;
+          max-width: 80px;
+        }
+      }
     }
   }
 }
@@ -1057,6 +1488,15 @@ body {
     justify-content: center;
   }
 
+  &Title {
+    @include media(768) {
+      margin: auto;
+      max-width: 268px;
+      text-align: center;
+      @include fontSet(3.25rem, 400, 3rem);
+    }
+  }
+
   .nameBox {
     align-items: center;
     border: 1px solid #fff;
@@ -1066,6 +1506,11 @@ body {
     margin-top: 16px;
     padding: 16px;
     width: fit-content;
+
+    @include media(768) {
+      box-shadow: none;
+      margin-top: 24px;
+    }
 
     .no {
       align-items: center;
@@ -1079,11 +1524,19 @@ body {
       width: 50px;
       @include fontSet(2rem, 900, 3rem);
       @extend %mainGradient;
+
+      @include media(768) {
+        @include fontSet(1.5rem, 900, 2.25rem);
+      }
     }
 
     .name {
       color: $primaryColor;
       @include fontSet(2.5rem, 700, 4rem);
+
+      @include media(768) {
+        @include fontSet(1.5rem, 700, 2.25rem);
+      }
     }
   }
 }
@@ -1092,14 +1545,30 @@ body {
   background-color: $bgSecondaryColor;
   padding: 64px 0;
 
+  @include media(768) {
+    padding: 64px 36px;
+  }
+
+  @include media(520) {
+    padding: 60px 0;
+  }
+
   &Box {
     display: flex;
+
+    @include media(768) {
+      flex-direction: column;
+    }
 
     > * {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 50%;
+
+      @include media(768) {
+        width: 100%;
+      }
     }
   }
 
@@ -1149,8 +1618,8 @@ body {
         position: relative;
         width: 48px;
 
-        @include hover{
-          @include after{
+        @include hover {
+          @include after {
             transform: scale(1);
           }
         }
@@ -1186,9 +1655,21 @@ body {
   }
 
   .rightBox {
+    @include media(768) {
+      margin-top: 24px;
+    }
+
     .title {
       color: $textColor;
       @include fontSet(1.5rem, 700, 2rem);
+
+      @include media(768) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .contactInfo {
+      color: $textColor;
     }
   }
 }
@@ -1239,6 +1720,47 @@ body {
     padding: 24px 0;
     width: 100%;
     @include fontSet(1rem, 600, 1.1rem);
+  }
+}
+
+.quick {
+  &Menu {
+    @include media(-1280) {
+      display: none;
+    }
+
+    background-color: #f8fafc;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 95;
+
+    ul {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+
+  &Link {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+
+    img {
+      height: 20px;
+      margin-bottom: 6px;
+      object-fit: contain;
+      width: 20px;
+    }
+
+    span {
+      color: $textColor;
+      @include fontSet(0.625rem, 400, 0.75rem);
+    }
   }
 }
 

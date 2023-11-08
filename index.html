@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路</title>
+    <meta name="description" content="2023 THE F2E 活動第一週 - 競選網站主題練習網站，設計稿提供：jhen，工程師：WJ0" />
+    <meta name="title" content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路" />
+    <meta property="og:image" content="./assets/cover.jpg">
+    <meta property="og:title" content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路">
+    <meta property="og:site_name" content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,19 +62,19 @@
         <nav class="menuBox">
           <ul>
             <li>
-              <a  data-hoverItem href="#advocate">候選人主張</a>
+              <a data-hoverItem href="#advocate">候選人主張</a>
             </li>
             <li>
-              <a  data-hoverItem href="#news">最新活動</a>
+              <a data-hoverItem href="#news">最新活動</a>
             </li>
             <li>
-              <a  data-hoverItem href="#policy">政策議題</a>
+              <a data-hoverItem href="#policy">政策議題</a>
             </li>
             <li>
-              <a  data-hoverItem href="#other">小額捐款</a>
+              <a data-hoverItem href="#other">小額捐款</a>
             </li>
             <li>
-              <a  data-hoverItem href="#other">民眾服務信箱</a>
+              <a data-hoverItem href="#other">民眾服務信箱</a>
             </li>
           </ul>
         </nav>
@@ -171,11 +177,31 @@
               <img src="./assets/banner-people.png" alt="person" />
             </div>
           </div>
+
+          <nav class="mediaBox">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="./assets/icon-fb.png" alt="facebook" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./assets/icon-ig.png" alt="ig" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./assets/icon-yt.png" alt="youtube" />
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </section>
 
       <section class="marquee">
-        <span>為喵星人，護台灣！從喵的眼中，看見台灣 喵的未來，人的希望</span>
+        <p>為喵星人，護台灣！從喵的眼中，看見台灣 喵的未來，人的希望</p>
       </section>
 
       <section id="advocate" class="advocate">
@@ -360,6 +386,7 @@
                   <span>填寫表單</span>
                   <img class="arrow" src="./assets/arrow-right.svg" />
                 </a>
+                <img src="./assets/service.png" />
               </div>
             </div>
           </div>
@@ -407,7 +434,7 @@
                 </ul>
               </nav>
 
-              <p class="copyRight">© 2023 喵立翰 Miao Li-Han 版權所有</p>
+              <p class="copyRight">© 2023 喵立翰 Miao Li-Han 版權所有 <br> 設計師：Jhen，工程師：WJ0</p>
             </div>
             <div class="rightBox">
               <p class="title">競選總部</p>
@@ -431,6 +458,31 @@
         </div>
       </footer>
 
+      <nav class="quickMenu">
+        <ul>
+          <li class="quickLink" data-section="#advocate">
+            <img src="./assets/icon-advocate.png" />
+            <span>候選人主張</span>
+          </li>
+          <li class="quickLink" data-section="#banner">
+            <img src="./assets/icon-news.png" />
+            <span>最新活動</span>
+          </li>
+          <li class="quickLink" data-section="#policy">
+            <img src="./assets/icon-policy.png" />
+            <span>政策議題</span>
+          </li>
+          <li class="quickLink" data-section="#donate">
+            <img src="./assets/icon-donate.png" />
+            <span>小額捐款</span>
+          </li>
+          <li class="quickLink" data-section="#other">
+            <img src="./assets/icon-service.png" />
+            <span>服務信箱</span>
+          </li>
+        </ul>
+      </nav>
+
       <div class="moduleMask"></div>
 
       <div class="moduleBox" data-module-name="news">
@@ -442,11 +494,10 @@
         </div>
         <div class="moduleContent">
           <div class="leftBox">
-            <div class="ImgBox">
+            <div class="imgBox">
               <img src="./assets/news1.png" alt="news" />
             </div>
             <p class="text">參與台北寵物論壇，爭取貓咪友善環境</p>
-            <p class="date">2023/12/24</p>
             <div class="shareBox">
               <span>分享</span>
               <ul class="socialBox">
@@ -503,7 +554,7 @@
         </div>
         <div class="moduleContent">
           <div class="leftBox">
-            <div class="ImgBox">
+            <div class="imgBox">
               <img
                 src="./assets/policy1.png"
                 alt="為毛孩子謀福利！推動寵物醫療保障方案"
@@ -578,10 +629,14 @@
         </div>
         <div class="moduleContent">
           <div class="leftBox">
-            <h2 class="title">您的小筆捐款<br />是每隻毛孩未來的大大動力！</h2>
-            <span class="desc">目前小額贊助總金額</span>
-            <div class="moneyBox">
-              <span class="money">1,000,000</span>
+            <div>
+              <h2 class="title">
+                您的小筆捐款<br />是每隻毛孩未來的大大動力！
+              </h2>
+              <span class="desc">目前小額贊助總金額</span>
+              <div class="moneyBox">
+                <span class="money">1,000,000</span>
+              </div>
             </div>
             <div class="imgBox">
               <img src="./assets/donate.png" alt="donate" />
@@ -624,6 +679,7 @@
                     <span class="planLabel">NT$</span>
                     <input
                       type="tel"
+                      inputmode="numeric"
                       class="planInput"
                       placeholder="輸入金額"
                     />
@@ -631,7 +687,15 @@
                 </li>
               </ul>
               <div class="planBtnBox">
-                <a href="#" id="planSubmit" class="planBtn">前往捐款</a>
+                <a href="#" id="planSubmit" class="planBtn"
+                  >前往捐款
+                  <img
+                    class="loading"
+                    width="24"
+                    height="24"
+                    src="./assets/loading.gif"
+                  />
+                </a>
               </div>
             </div>
 
@@ -713,7 +777,14 @@
                   ></textarea>
                 </div>
                 <div class="formBtnBox">
-                  <button class="formBtn" type="submit">送出意見</button>
+                  <button class="formBtn" type="submit">送出意見
+                    <img
+                    class="loading"
+                    width="24"
+                    height="24"
+                    src="./assets/loading.gif"
+                  />
+                  </button>
                 </div>
               </form>
             </div>
@@ -726,7 +797,9 @@
                 </svg>
               </div>
               <div class="donateBtnBox">
-                <a href="#" id="serviceFinish" class="donateBtn">關閉</a>
+                <a href="#" id="serviceFinish" class="donateBtn"
+                  >關閉                  
+                </a>
               </div>
             </div>
           </div>
@@ -896,13 +969,22 @@
       handleLenisMask();
 
       // header
-      const menus = [
-        ...document.querySelectorAll('.header .menuBox li a[href^="#"]'),
-      ];
+      const menus = document.querySelectorAll(
+        '.header .menuBox li a[href^="#"]'
+      );
       menus.forEach((menu) => {
         menu.addEventListener("click", (e) => {
           e.preventDefault();
           lenis.scrollTo(menu.getAttribute("href"), { offset: -100 });
+        });
+      });
+
+      // quick menu
+      const quickMenus = document.querySelectorAll(".quickLink");
+      quickMenus.forEach((menu) => {
+        menu.addEventListener("click", (e) => {
+          e.preventDefault();
+          lenis.scrollTo(menu.dataset.section, { offset: -100 });
         });
       });
 
@@ -1107,6 +1189,15 @@
         submitDom: document.querySelector("#planSubmit"),
         finishDom: document.querySelector("#donateFinish"),
         totalDom: document.querySelector(".moneyBox .money"),
+        loadingDom: document.querySelector("#planSubmit .loading"),
+        showLoading() {
+          this.loadingDom.classList.add("show");
+          this.submitDom.style.pointerEvents = "none";
+        },
+        hideLoading() {
+          this.loadingDom.classList.remove("show");
+          this.submitDom.style.pointerEvents = "auto";
+        },
         removeItemSelect() {
           this.itemDom.forEach((item) => item.classList.remove("selected"));
         },
@@ -1149,6 +1240,8 @@
               return;
             }
 
+            this.showLoading();
+
             this.sendDonate()
               .then((data) => {
                 this.totalCallback(data);
@@ -1161,6 +1254,9 @@
                   title: "系統錯誤，請稍後再試",
                   text: err,
                 });
+              })
+              .finally(() => {
+                this.hideLoading();
               });
           });
         },
@@ -1237,7 +1333,17 @@
       const service = {
         form: document.querySelector("#serviceForm"),
         finishDom: document.querySelector("#serviceFinish"),
+        sendDom: document.querySelector(".formBtn"),
+        loadingDom: document.querySelector(".formBtn .loading"),
         canSend: true,
+        showLoading() {
+          this.loadingDom.classList.add("show");
+          this.sendDom.style.pointerEvents = "none";
+        },
+        hideLoading() {
+          this.loadingDom.classList.remove("show");
+          this.sendDom.style.pointerEvents = "auto";
+        },
         bindFormEvent() {
           this.form.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -1249,13 +1355,26 @@
             if (!this.canSend || !this.checkFormate(name, email, mobile))
               return;
 
-            this.sendMail(name, email).then((data) => {
-              donate.totalCallback(data);
-              const outerBox = this.form.closest(".moduleBox");
-              outerBox.dataset.status = "after";
-              this.canSend = false;
-              setTimeout(() => (this.canSend = true), 3000);
-            });
+            this.showLoading();
+
+            this.sendMail(name, email)
+              .then((data) => {
+                donate.totalCallback(data);
+                const outerBox = this.form.closest(".moduleBox");
+                outerBox.dataset.status = "after";
+                this.canSend = false;
+                setTimeout(() => (this.canSend = true), 3000);
+              })
+              .catch((err) => {
+                Swal.fire({
+                  icon: "error",
+                  title: "系統錯誤，請稍後再試",
+                  text: err,
+                });
+              })
+              .finally(() => {
+                this.hideLoading();
+              });
           });
         },
         bindFinishEvent() {
@@ -1274,7 +1393,7 @@
             mobile: /^09\d{8}$/,
           };
 
-          if (!name) {            
+          if (!name) {
             Swal.fire({
               icon: "error",
               text: "請輸入姓名",
