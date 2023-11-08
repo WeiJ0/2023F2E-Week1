@@ -3,7 +3,7 @@
 @import "utils/often";
 @import "utils/setting";
 
-/* 共同使用 */
+/* 共用 */
 
 .blockTitle {
   background-color: $textColor;
@@ -706,9 +706,9 @@
   pointer-events: none;
 }
 
-.lenis{
+.lenis {
   &.lenis-smooth {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 
     [data-lenis-prevent] {
       overscroll-behavior: contain;
@@ -719,12 +719,14 @@
     overflow: hidden;
   }
 
-  &.lenis-scrolling iframe {
-    pointer-events: none;
+  &.lenis-scrolling {
+    iframe {
+      pointer-events: none;
+    }
   }
 }
 
-html.lenis{
+html.lenis {
   height: auto;
 }
 

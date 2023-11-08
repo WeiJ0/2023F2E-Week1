@@ -60,7 +60,7 @@ svg {
     transform: translateX(-100%);
   }
 }
-/* 共同使用 */
+/* 共用 */
 .blockTitle {
   background-color: #334155;
   border-radius: 16px;
@@ -785,7 +785,7 @@ svg {
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
