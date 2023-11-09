@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路</title>
-    <meta name="description" content="2023 THE F2E 活動第一週 - 競選網站主題練習網站，設計稿提供：jhen，工程師：WJ0" />
+    <meta
+      name="description"
+      content="2023 THE F2E 活動第一週 - 競選網站主題練習網站，設計稿提供：jhen，工程師：WJ0"
+    />
     <meta name="title" content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路" />
-    <meta property="og:image" content="https://weij0.github.io/2023F2E-Week1/assets/cover.jpg">
-    <meta property="og:title" content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路">
-    <meta property="og:site_name" content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路">
-    <meta property="og:type" content="website">
+    <meta
+      property="og:image"
+      content="https://weij0.github.io/2023F2E-Week1/assets/cover.jpg"
+    />
+    <meta
+      property="og:title"
+      content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路"
+    />
+    <meta
+      property="og:site_name"
+      content="喵立翰 Miao Li-Han - 台灣的明天 喵先鋪路"
+    />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -434,7 +446,10 @@
                 </ul>
               </nav>
 
-              <p class="copyRight">© 2023 喵立翰 Miao Li-Han 版權所有 <br> 設計師：Jhen，工程師：WJ0</p>
+              <p class="copyRight">
+                © 2023 喵立翰 Miao Li-Han 版權所有 <br />
+                設計師：Jhen，工程師：WJ0
+              </p>
             </div>
             <div class="rightBox">
               <p class="title">競選總部</p>
@@ -681,7 +696,9 @@
                       type="tel"
                       inputmode="numeric"
                       class="planInput"
-                      placeholder="輸入金額"
+                      placeholder="輸入金額，最大金額為 99999"
+                      min="1"
+                      max="99999"
                     />
                   </div>
                 </li>
@@ -777,13 +794,14 @@
                   ></textarea>
                 </div>
                 <div class="formBtnBox">
-                  <button class="formBtn" type="submit">送出意見
+                  <button class="formBtn" type="submit">
+                    送出意見
                     <img
-                    class="loading"
-                    width="24"
-                    height="24"
-                    src="./assets/loading.gif"
-                  />
+                      class="loading"
+                      width="24"
+                      height="24"
+                      src="./assets/loading.gif"
+                    />
                   </button>
                 </div>
               </form>
@@ -797,9 +815,7 @@
                 </svg>
               </div>
               <div class="donateBtnBox">
-                <a href="#" id="serviceFinish" class="donateBtn"
-                  >關閉                  
-                </a>
+                <a href="#" id="serviceFinish" class="donateBtn">關閉 </a>
               </div>
             </div>
           </div>
@@ -1236,6 +1252,14 @@
               Swal.fire({
                 icon: "error",
                 text: "請選擇方案或輸入金額",
+              });
+              return;
+            }
+
+            if (this.currentSelected <= 0 || this.currentSelected > 99999) {
+              Swal.fire({
+                icon: "error",
+                text: "輸入的金額有誤，不得小於 0 元或大於 99999 元",
               });
               return;
             }
