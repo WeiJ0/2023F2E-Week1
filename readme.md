@@ -1,16 +1,20 @@
 # 2023 THE F2E Mission1 - 立委競選官網
 
+[Demo](https://weij0.github.io/2023F2E-Week1/)
+
 ## 感謝設計稿提供設計師 - jhen
+
+[設計稿](https://www.figma.com/file/DCnuTZQ00D5VHiDkBLhxQ3/2023-The-F2E-%E7%AB%8B%E5%A7%94%E7%AB%B6%E9%81%B8%E5%AE%98%E7%B6%B2?type=design&node-id=139-170&mode=design)
 
 ## 使用工具
 
-- js plugin
+### js plugin
 1. gsap 滾動效果呈現
 2. lenis 絲滑捲動效果
 3. lottie-player 設計師提供 loading 物件的播放
 4. sweetalert2 美化過的 alert 視窗
 
-- 其他功能
+### 其他功能
 1. google sheet 當作小型資料庫，儲存每筆捐贈的數目以及用總和功能算出各方案的捐款人數及總額。
 2. google app script 將上述的 google sheet 轉換成 API 以及連結 gmail 做出系統回信的功能。
 3. express.js 因為 google app script 會有 CORS 問題，暫時沒找到解決問題，所以再透過 express 做中介。
