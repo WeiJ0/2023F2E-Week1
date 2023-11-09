@@ -1,5 +1,7 @@
 # 2023 THE F2E Mission1 - 立委競選官網
 
+![cover](https://raw.githubusercontent.com/WeiJ0/2023F2E-Week1/main/assets/cover.jpg)
+
 [Demo](https://weij0.github.io/2023F2E-Week1/)
 
 ## 感謝設計稿提供設計師 - jhen
