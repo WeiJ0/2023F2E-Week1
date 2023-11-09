@@ -1116,6 +1116,7 @@
         const otherTimeLine = gsap.timeline({ paused: true });
         otherTimeLine.from(".donateBox, .serviceBox", {
           scale: 0,
+          opacity: 0,
           duration: 1.2,
           ease: "back.out(1.7)",
         });
@@ -1125,6 +1126,34 @@
           start: "top 70%",
           onEnter: () => {
             otherTimeLine.play();
+          },
+        });
+
+        const sloganTimeLine = gsap.timeline({ paused: true });
+        sloganTimeLine
+          .from(".sloganBox .sloganTitle", {
+            opacity: 0,
+            y: 20,
+            duration: 1.2,
+            ease: "power4.out",
+          })
+          .from(".sloganBox .no", {
+            opacity: 0,
+            scale: 0,
+            duration: 1.2,
+            ease: "back.out(1.7)",
+          }, "-=0.8")
+          .from(".sloganBox .name", {
+            opacity: 0,
+            duration: 0.8,
+            ease: "power4.out",
+          }, "-=0.8");
+
+        ScrollTrigger.create({
+          trigger: ".sloganBox",
+          start: "top 70%",
+          onEnter: () => {
+            sloganTimeLine.play();
           },
         });
       }
