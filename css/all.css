@@ -5,7 +5,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -63,11 +63,11 @@ svg {
 /* 共用 */
 .blockTitle {
   background-color: #334155;
-  border-radius: 16px;
+  border-radius: 1rem;
   color: #fff;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 1rem;
@@ -99,7 +99,7 @@ svg {
   cursor: pointer;
   display: flex;
   overflow: hidden;
-  padding: 22.5px 24px;
+  padding: 22.5px 1.5rem;
   transition: all 0.35s ease-in-out;
   width: -moz-fit-content;
   width: fit-content;
@@ -109,7 +109,7 @@ svg {
 }
 @media (max-width: 768px) {
   .btn {
-    padding: 20px 24px;
+    padding: 20px 1.5rem;
   }
 }
 @media (min-width: 1201px) {
@@ -124,7 +124,7 @@ svg {
 }
 .btn .arrow {
   height: 20px;
-  margin-left: 12px;
+  margin-left: 0.75rem;
   -o-object-fit: contain;
      object-fit: contain;
   width: 20px;
@@ -141,7 +141,7 @@ svg {
 }
 .shareBox span {
   color: #334155;
-  margin-right: 16px;
+  margin-right: 1rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -164,7 +164,7 @@ svg {
 }
 .moduleBox {
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -173,7 +173,7 @@ svg {
   top: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  padding: 48px;
+  padding: 3rem;
   pointer-events: none;
   position: fixed;
   width: 100%;
@@ -182,7 +182,7 @@ svg {
 @media (max-width: 768px) {
   .moduleBox {
     max-width: 90%;
-    padding: 16px 24px;
+    padding: 1rem 1.5rem;
   }
 }
 .moduleBox.show {
@@ -199,11 +199,11 @@ svg {
   display: flex;
   justify-content: space-between;
   max-width: 1400px;
-  padding: 0 48px;
+  padding: 0 3rem;
 }
 @media (max-width: 768px) {
   .moduleHead {
-    padding: 8px 0 8px 16px;
+    padding: 0.5rem 0 0.5rem 1rem;
   }
 }
 .moduleTitle {
@@ -221,11 +221,11 @@ svg {
 }
 .moduleClose {
   cursor: pointer;
-  height: 32px;
+  height: 2rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  width: 32px;
+  width: 2rem;
 }
 @media (min-width: 1201px) {
   .moduleClose:hover {
@@ -242,23 +242,23 @@ svg {
   max-height: 650px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 48px;
+  padding: 3rem;
   pointer-events: none;
 }
 @media (max-width: 768px) {
   .moduleContent {
     flex-direction: column;
     max-height: 70vh;
-    padding: 16px;
+    padding: 1rem;
   }
 }
 @media (max-width: 640px) {
   .moduleContent {
-    padding: 16px 0;
+    padding: 1rem 0;
   }
 }
 .moduleContent .leftBox {
-  margin-right: 32px;
+  margin-right: 2rem;
 }
 @media (max-width: 768px) {
   .moduleContent .leftBox {
@@ -266,14 +266,14 @@ svg {
   }
 }
 .moduleContent .leftBox .imgBox {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .moduleContent .leftBox .imgBox img {
   max-width: 100%;
 }
 .moduleContent .leftBox .text {
   color: #334155;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4857142857;
@@ -287,7 +287,7 @@ svg {
 }
 .moduleContent .leftBox .date {
   color: #94a3b8;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4857142857;
@@ -296,19 +296,19 @@ svg {
   display: flex;
 }
 .moduleContent .leftBox .socialBox li:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 1rem;
 }
 .moduleContent .rightBox .title {
   color: #da7d4a;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;
 }
 @media (max-width: 768px) {
   .moduleContent .rightBox .title {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 420px) {
@@ -320,24 +320,24 @@ svg {
 }
 .moduleContent .rightBox .subtitle {
   color: #334155;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
 }
 .moduleContent .rightBox .subtitle + .desc {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 .moduleContent .rightBox .date {
   color: #94a3b8;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4857142857;
 }
 @media (max-width: 768px) {
   .moduleContent .rightBox .date {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 }
 .moduleContent .rightBox .desc {
@@ -348,18 +348,18 @@ svg {
 }
 @media (max-width: 768px) {
   .moduleContent .rightBox .desc {
-    margin-top: 32px;
+    margin-top: 2rem;
   }
 }
 .moduleContent .rightBox .moreBox {
   background-color: #f8fafc;
-  border-radius: 12px;
-  margin-top: 96px;
-  padding: 16px;
+  border-radius: 0.75rem;
+  margin-top: 6rem;
+  padding: 1rem;
 }
 .moduleContent .rightBox .moreTitle {
   color: #334155;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.25;
@@ -381,22 +381,22 @@ svg {
   }
 }
 .moduleContent .rightBox .moreItem:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 1rem;
 }
 @media (max-width: 640px) {
   .moduleContent .rightBox .moreItem:not(:last-child) {
     margin-right: 0;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
 }
 .moduleContent .rightBox .moreItem .imgBox {
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
 }
 .moduleBox[data-module-name=donate] .leftBox, .moduleBox[data-module-name=service] .leftBox {
   background-color: #f7ece1;
   box-sizing: border-box;
-  border-radius: 24px;
-  margin-right: 32px;
+  border-radius: 1.5rem;
+  margin-right: 2rem;
   position: relative;
   padding: 60px 60px 120px;
   width: 55%;
@@ -406,8 +406,8 @@ svg {
     align-items: flex-start;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 24px;
-    padding: 24px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
     width: 100%;
   }
 }
@@ -418,7 +418,7 @@ svg {
 }
 .moduleBox[data-module-name=donate] .leftBox .title, .moduleBox[data-module-name=service] .leftBox .title {
   color: #da7d4a;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.5;
@@ -439,7 +439,7 @@ svg {
 }
 .moduleBox[data-module-name=donate] .leftBox .desc, .moduleBox[data-module-name=service] .leftBox .desc {
   color: #334155;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -494,7 +494,7 @@ svg {
 }
 .moduleBox[data-module-name=donate] .rightBox .subtitle, .moduleBox[data-module-name=service] .rightBox .subtitle {
   color: #334155;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
@@ -506,12 +506,12 @@ svg {
   align-items: center;
   box-sizing: border-box;
   border: 2px solid #e2e8f0;
-  border-radius: 16px;
+  border-radius: 1rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 16px;
-  padding: 22.5px 16px;
+  margin-bottom: 1rem;
+  padding: 22.5px 1rem;
   transition: border-color 0.85s ease;
 }
 @media (max-width: 520px) {
@@ -526,7 +526,7 @@ svg {
 .moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInput, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInput {
   background-color: transparent;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   box-sizing: border-box;
   height: 100%;
   position: absolute;
@@ -563,10 +563,10 @@ svg {
   line-height: 1.4444444444;
 }
 .moduleBox[data-module-name=donate] .rightBox .planItem.custom .planInputBox, .moduleBox[data-module-name=service] .rightBox .planItem.custom .planInputBox {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   box-sizing: border-box;
   background-color: #f1f5f9;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   height: 60px;
   position: relative;
   width: 100%;
@@ -601,7 +601,7 @@ svg {
   }
 }
 .moduleBox[data-module-name=donate] .rightBox .planItem .amount, .moduleBox[data-module-name=service] .rightBox .planItem .amount {
-  margin-left: 8px;
+  margin-left: 0.5rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.5;
@@ -614,7 +614,7 @@ svg {
 }
 .moduleBox[data-module-name=donate] .rightBox .planItem .personBox, .moduleBox[data-module-name=service] .rightBox .planItem .personBox {
   color: #94a3b8;
-  padding: 0 0 0 24px;
+  padding: 0 0 0 1.5rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4857142857;
@@ -626,13 +626,13 @@ svg {
   color: #fff;
   display: flex;
   justify-content: center;
-  padding: 24px 0;
+  padding: 1.5rem 0;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.1;
 }
 .moduleBox[data-module-name=donate] .rightBox .planBtnBox, .moduleBox[data-module-name=service] .rightBox .planBtnBox {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 .moduleBox[data-module-name=donate] .rightBox .planBtn .loading, .moduleBox[data-module-name=service] .rightBox .planBtn .loading {
   display: none;
@@ -649,7 +649,7 @@ svg {
 }
 .moduleBox[data-module-name=donate] .rightBox .afterDonate .feedback, .moduleBox[data-module-name=service] .rightBox .afterDonate .feedback {
   color: #334155;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.1428571429;
@@ -658,13 +658,13 @@ svg {
   background-color: #f1f5f9;
   border-radius: 500px;
   color: #334155;
-  padding: 16px 96px;
+  padding: 1rem 6rem;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1;
 }
 .moduleBox[data-module-name=donate] .rightBox .afterDonate .donateBtnBox, .moduleBox[data-module-name=service] .rightBox .afterDonate .donateBtnBox {
-  margin-top: 32px;
+  margin-top: 2rem;
 }
 .moduleBox[data-module-name=donate] .rightBox .afterDonate .donateIcon svg, .moduleBox[data-module-name=service] .rightBox .afterDonate .donateIcon svg {
   height: 170px;
@@ -692,14 +692,14 @@ svg {
 }
 .moduleBox[data-module-name=service] .leftBox {
   background-color: #e3f8ff;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 60px 0 0;
 }
 @media (max-width: 768px) {
   .moduleBox[data-module-name=service] .leftBox {
     align-items: center;
     justify-content: space-between;
-    padding: 24px;
+    padding: 1.5rem;
   }
 }
 .moduleBox[data-module-name=service] .leftBox .title {
@@ -757,7 +757,7 @@ svg {
 }
 .mouseBox {
   border-radius: 50%;
-  height: 16px;
+  height: 1rem;
   scale: var(--scale);
   opacity: 0;
   position: absolute;
@@ -765,7 +765,7 @@ svg {
   rotate: 10deg;
   translate: var(--x) var(--y);
   transition: translate var(--delay) ease-out, scale 0.4s, opacity 0.4s;
-  width: 16px;
+  width: 1rem;
 }
 .mouseBox.hover:first-of-type {
   background-image: url("../assets/ico.svg");
@@ -864,7 +864,7 @@ body.isLoading {
   height: 100px;
   justify-content: space-between;
   position: fixed;
-  padding: 28px 48px;
+  padding: 1.75rem 3rem;
   top: 0;
   left: 0;
   width: 100%;
@@ -873,7 +873,7 @@ body.isLoading {
 @media (max-width: 520px) {
   .header {
     height: 56px;
-    padding: 0 16px;
+    padding: 0 1rem;
   }
 }
 .header .logoBox {
@@ -883,7 +883,7 @@ body.isLoading {
 }
 @media (max-width: 520px) {
   .header .logoBox img {
-    height: 28px;
+    height: 1.75rem;
     width: 34px;
   }
 }
@@ -892,7 +892,7 @@ body.isLoading {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.5;
-  margin-left: 8px;
+  margin-left: 0.5rem;
 }
 @media (max-width: 640px) {
   .header .logoBox span {
@@ -909,8 +909,8 @@ body.isLoading {
   display: flex;
 }
 .header .menuBox ul li {
-  padding: 8px;
-  margin: 0 16px;
+  padding: 0.5rem;
+  margin: 0 1rem;
 }
 .header .menuBox ul li a {
   color: #334155;
@@ -951,7 +951,7 @@ body.isLoading {
   z-index: -1;
 }
 .header .mediaBox ul li:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 1rem;
 }
 
 .banner {
@@ -966,7 +966,7 @@ body.isLoading {
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 2px;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   text-align: center;
   font-size: 6rem;
   font-weight: 400;
@@ -975,7 +975,7 @@ body.isLoading {
 @media (max-width: 768px) {
   .banner h1 {
     max-width: 320px;
-    margin: 0 auto 16px;
+    margin: 0 auto 1rem;
     font-size: 3.25rem;
     font-weight: 400;
     line-height: 1.0384615385;
@@ -1005,11 +1005,11 @@ body.isLoading {
 }
 .banner .textBox .titleName {
   background-color: #334155;
-  border-radius: 16px;
+  border-radius: 1rem;
   color: #fff;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.1428571429;
@@ -1024,16 +1024,16 @@ body.isLoading {
 .banner .textBox .nameBox {
   align-items: center;
   border: 1px solid #fff;
-  border-radius: 16px;
-  box-shadow: 0px 4px 12px 0px rgba(163, 180, 203, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0px 4px 0.75rem 0px rgba(163, 180, 203, 0.2);
   display: flex;
-  margin-left: 16px;
-  padding: 16px;
+  margin-left: 1rem;
+  padding: 1rem;
 }
 @media (max-width: 768px) {
   .banner .textBox .nameBox {
     margin-left: 0;
-    padding: 12px 16px;
+    padding: 0.75rem 1rem;
   }
 }
 .banner .textBox .nameBox .no {
@@ -1044,7 +1044,7 @@ body.isLoading {
   font-weight: 900;
   height: 50px;
   justify-content: center;
-  margin-right: 16px;
+  margin-right: 1rem;
   width: 50px;
   font-size: 2rem;
   font-weight: 900;
@@ -1128,10 +1128,10 @@ body.isLoading {
 .banner .mediaBox ul {
   align-items: center;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  padding: 10px 40px;
+  padding: 10px 2.5rem;
 }
 .banner .mediaBox ul li {
   position: relative;
@@ -1158,7 +1158,7 @@ body.isLoading {
   z-index: -1;
 }
 .banner .mediaBox ul li:not(:last-child) {
-  margin-right: 16px;
+  margin-right: 1rem;
 }
 
 .marquee {
@@ -1197,11 +1197,11 @@ body.isLoading {
 }
 @media (max-width: 768px) {
   .advocate {
-    padding: 64px 0;
+    padding: 4rem 0;
   }
 }
 .advocateBox {
-  border-radius: 40px;
+  border-radius: 2.5rem;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   overflow: hidden;
@@ -1219,11 +1219,11 @@ body.isLoading {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 64px 40px;
+  padding: 4rem 2.5rem;
 }
 @media (max-width: 520px) {
   .advocate .textBox {
-    padding: 40px 20px;
+    padding: 2.5rem 20px;
   }
 }
 .advocate .imgBox {
@@ -1242,7 +1242,7 @@ body.isLoading {
 }
 .advocateTitle {
   color: #334155;
-  margin-top: 32px;
+  margin-top: 2rem;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.2;
@@ -1260,27 +1260,27 @@ body.isLoading {
 }
 .advocateContent {
   color: #334155;
-  margin-top: 32px;
+  margin-top: 2rem;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.6;
 }
 
 .news {
-  padding: 104px 0;
+  padding: 6.5rem 0;
 }
 @media (max-width: 768px) {
   .news {
-    padding: 64px 0;
+    padding: 4rem 0;
   }
 }
 .news .titleBox {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 4rem;
 }
 @media (max-width: 768px) {
   .news .titleBox {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
 }
 .news .titleBox .blockTitle {
@@ -1288,8 +1288,8 @@ body.isLoading {
 }
 .newsBox {
   display: flex;
-  -moz-column-gap: 24px;
-       column-gap: 24px;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
 }
 @media (max-width: 768px) {
   .newsBox {
@@ -1305,7 +1305,7 @@ body.isLoading {
   }
 }
 .newsImg {
-  border-radius: 16px;
+  border-radius: 1rem;
   font-size: 0;
   overflow: hidden;
 }
@@ -1318,7 +1318,7 @@ body.isLoading {
   }
 }
 .newsInfo {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 .newsInfo .date {
   color: #94a3b8;
@@ -1328,14 +1328,14 @@ body.isLoading {
 }
 .newsInfo .title {
   color: #334155;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
 }
 .newsInfo .desc {
   color: #334155;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1362,12 +1362,12 @@ body.isLoading {
 }
 @media (max-width: 768px) {
   .news .rightBox {
-    margin-top: 24px;
+    margin-top: 1.5rem;
   }
 }
 .news .rightBox .newsItem {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 .news .rightBox .newsItem .newsImg {
   max-width: 200px;
@@ -1385,7 +1385,7 @@ body.isLoading {
 }
 .news .rightBox .newsItem .newsInfo {
   margin-top: 0;
-  padding-left: 16px;
+  padding-left: 1rem;
 }
 .news .rightBox .newsItem .newsInfo .title {
   font-size: 1rem;
@@ -1395,16 +1395,16 @@ body.isLoading {
 
 .policy {
   background-color: #fdfcfb;
-  padding: 104px 0;
+  padding: 6.5rem 0;
 }
 @media (max-width: 768px) {
   .policy {
-    padding: 64px 0;
+    padding: 4rem 0;
   }
 }
 .policy .titleBox {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 4rem;
 }
 .policy .titleBox .blockTitle {
   margin: auto;
@@ -1412,15 +1412,15 @@ body.isLoading {
 .policyList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  -moz-column-gap: 64px;
-       column-gap: 64px;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
 }
 @media (max-width: 768px) {
   .policyList {
-    -moz-column-gap: 24px;
-         column-gap: 24px;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 64px;
+    row-gap: 4rem;
   }
 }
 @media (max-width: 740px) {
@@ -1444,18 +1444,18 @@ body.isLoading {
 }
 .policyInfo {
   color: #334155;
-  margin-bottom: 16px;
-  padding: 0 16px;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.5;
 }
 .policyImg {
-  border-radius: 24px;
+  border-radius: 1.5rem;
   overflow: hidden;
 }
 .other {
-  padding: 104px 0;
+  padding: 6.5rem 0;
 }
 @media (max-width: 768px) {
   .other {
@@ -1465,8 +1465,8 @@ body.isLoading {
 .otherBox {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  -moz-column-gap: 24px;
-       column-gap: 24px;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
 }
 @media (max-width: 768px) {
   .otherBox {
@@ -1481,11 +1481,11 @@ body.isLoading {
   }
 }
 .otherBox > * {
-  border-radius: 32px;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 96px;
+  padding: 6rem;
 }
 @media (max-width: 1280px) {
   .otherBox > * {
@@ -1494,7 +1494,7 @@ body.isLoading {
 }
 @media (max-width: 768px) {
   .otherBox > * {
-    padding: 40px 24px;
+    padding: 2.5rem 1.5rem;
     width: 50%;
   }
 }
@@ -1516,7 +1516,7 @@ body.isLoading {
 }
 @media (max-width: 768px) {
   .other .donateBox {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
 }
 .other .serviceBox {
@@ -1527,7 +1527,7 @@ body.isLoading {
   transform: translateY(15px);
 }
 .otherTitle {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-size: 3.25rem;
   font-weight: 400;
   line-height: 1.4153846154;
@@ -1552,13 +1552,13 @@ body.isLoading {
 }
 @media (max-width: 768px) {
   .otherBtn {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
 }
 .otherBtnBox {
   align-items: flex-end;
   display: flex;
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 @media (max-width: 768px) {
   .otherBtnBox {
@@ -1588,7 +1588,7 @@ body.isLoading {
 }
 
 .slogan {
-  padding: 104px 0;
+  padding: 6.5rem 0;
 }
 .sloganBox {
   align-items: center;
@@ -1609,18 +1609,18 @@ body.isLoading {
 .slogan .nameBox {
   align-items: center;
   border: 1px solid #fff;
-  border-radius: 16px;
-  box-shadow: 0px 4px 12px 0px rgba(163, 180, 203, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0px 4px 0.75rem 0px rgba(163, 180, 203, 0.2);
   display: flex;
-  margin-top: 16px;
-  padding: 16px;
+  margin-top: 1rem;
+  padding: 1rem;
   width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {
   .slogan .nameBox {
     box-shadow: none;
-    margin-top: 24px;
+    margin-top: 1.5rem;
   }
 }
 .slogan .nameBox .no {
@@ -1631,7 +1631,7 @@ body.isLoading {
   font-weight: 900;
   height: 50px;
   justify-content: center;
-  margin-right: 16px;
+  margin-right: 1rem;
   width: 50px;
   font-size: 2rem;
   font-weight: 900;
@@ -1660,11 +1660,11 @@ body.isLoading {
 
 .footer {
   background-color: #f7ece1;
-  padding: 64px 0;
+  padding: 4rem 0;
 }
 @media (max-width: 768px) {
   .footer {
-    padding: 64px 36px;
+    padding: 4rem 2.25rem;
   }
 }
 @media (max-width: 520px) {
@@ -1700,10 +1700,10 @@ body.isLoading {
   border-radius: 50%;
   color: #fff;
   display: flex;
-  height: 32px;
+  height: 2rem;
   justify-content: center;
-  margin-right: 8px;
-  width: 32px;
+  margin-right: 0.5rem;
+  width: 2rem;
   font-size: 1.25rem;
   font-weight: 900;
   line-height: 1.5;
@@ -1715,24 +1715,24 @@ body.isLoading {
   line-height: 1.2;
 }
 .footer .mediaBox {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 .footer .mediaBox ul {
   align-items: center;
   display: flex;
 }
 .footer .mediaBox ul li:not(:last-child) {
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 .footer .mediaBox ul a {
   align-items: center;
   background-color: #fff;
   border-radius: 50%;
   display: flex;
-  height: 48px;
+  height: 3rem;
   justify-content: center;
   position: relative;
-  width: 48px;
+  width: 3rem;
 }
 @media (min-width: 1201px) {
   .footer .mediaBox ul a:hover:after {
@@ -1754,8 +1754,8 @@ body.isLoading {
   width: 100%;
 }
 .footer .mediaBox ul a img {
-  height: 28px;
-  width: 28px;
+  height: 1.75rem;
+  width: 1.75rem;
   -o-object-fit: contain;
      object-fit: contain;
   position: relative;
@@ -1763,14 +1763,14 @@ body.isLoading {
 }
 .footer .copyRight {
   color: #334155;
-  margin-top: 16px;
+  margin-top: 1rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4857142857;
 }
 @media (max-width: 768px) {
   .footer .rightBox {
-    margin-top: 24px;
+    margin-top: 1.5rem;
   }
 }
 .footer .rightBox .title {
@@ -1781,7 +1781,7 @@ body.isLoading {
 }
 @media (max-width: 768px) {
   .footer .rightBox .title {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
 }
 .footer .rightBox .contactInfo {
@@ -1794,7 +1794,7 @@ body.isLoading {
 }
 .formRow label {
   color: #334155;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
@@ -1803,9 +1803,9 @@ body.isLoading {
 .formRow textarea {
   background-color: #f1f5f9;
   border: none;
-  border-radius: 8px;
-  margin-bottom: 24px;
-  padding: 16px;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
 }
 .formRow input:focus,
 .formRow textarea:focus {
@@ -1851,7 +1851,7 @@ body.isLoading {
   color: #fff;
   display: flex;
   justify-content: center;
-  padding: 24px 0;
+  padding: 1.5rem 0;
   width: 100%;
   font-size: 1rem;
   font-weight: 600;
@@ -1881,7 +1881,7 @@ body.isLoading {
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 12px 0;
+  padding: 0.75rem 0;
 }
 .quickLink img {
   height: 20px;

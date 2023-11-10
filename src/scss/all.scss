@@ -7,10 +7,10 @@
 
 .blockTitle {
   background-color: $textColor;
-  border-radius: 16px;
+  border-radius: 1rem;
   color: #fff;
   height: fit-content;
-  padding: 8px 12px;
+  padding: .5rem .75rem;
   width: fit-content;
   @include fontSet(1rem, 700, 1.18rem);
 }
@@ -36,13 +36,13 @@
   cursor: pointer;
   display: flex;
   overflow: hidden;
-  padding: 22.5px 24px;
+  padding: 22.5px 1.5rem;
   transition: all 0.35s ease-in-out;
   width: fit-content;
   @include fontSet(1rem, 600, 1rem);
 
   @include media(768) {
-    padding: 20px 24px;
+    padding: 20px 1.5rem;
   }
 
   @include hover {
@@ -57,7 +57,7 @@
 
   .arrow {
     height: 20px;
-    margin-left: 12px;
+    margin-left: .75rem;
     object-fit: contain;
     width: 20px;
     transition: transform 0.35s ease-in-out;
@@ -75,7 +75,7 @@
 
   span {
     color: $textColor;
-    margin-right: 16px;
+    margin-right: 1rem;
     @include fontSet(1rem, 400, 1.5rem);
   }
 }
@@ -100,7 +100,7 @@
 
   &Box {
     background-color: #fff;
-    border-radius: 16px;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -109,7 +109,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    padding: 48px;
+    padding: 3rem;
     pointer-events: none;
     position: fixed;
     width: 100%;
@@ -117,7 +117,7 @@
 
     @include media(768) {
       max-width: 90%;
-      padding: 16px 24px;
+      padding: 1rem 1.5rem;
     }
 
     &.show {
@@ -137,10 +137,10 @@
     display: flex;
     justify-content: space-between;
     max-width: 1400px;
-    padding: 0 48px;
+    padding: 0 3rem;
 
     @include media(768) {
-      padding: 8px 0 8px 16px;
+      padding: .5rem 0 .5rem 1rem;
     }
   }
 
@@ -155,9 +155,9 @@
 
   &Close {
     cursor: pointer;
-    height: 32px;
+    height: 2rem;
     user-select: none;
-    width: 32px;
+    width: 2rem;
     @extend %ts;
 
     @include hover {
@@ -175,28 +175,28 @@
     max-height: 650px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 48px;
+    padding: 3rem;
     pointer-events: none;
 
     @include media(768) {
       flex-direction: column;
       max-height: 70vh;
-      padding: 16px;
+      padding: 1rem;
     }
 
     @include media(640) {
-      padding: 16px 0;
+      padding: 1rem 0;
     }
 
     .leftBox {
-      margin-right: 32px;
+      margin-right: 2rem;
 
       @include media(768) {
         margin-right: 0;
       }
 
       .imgBox {
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
 
         img {
           max-width: 100%;
@@ -205,7 +205,7 @@
 
       .text {
         color: $textColor;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         @include fontSet(0.875rem, 400, 1.3rem);
 
         @include media(768) {
@@ -215,7 +215,7 @@
 
       .date {
         color: $textSecondaryColor;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         @include fontSet(0.875rem, 400, 1.3rem);
       }
 
@@ -223,7 +223,7 @@
         display: flex;
         li {
           &:not(:last-child) {
-            margin-right: 16px;
+            margin-right: 1rem;
           }
         }
       }
@@ -232,12 +232,12 @@
     .rightBox {
       .title {
         color: $primaryColor;
-        margin-bottom: 32px;
+        margin-bottom: 2rem;
         @include fontSet(2rem, 700, 2rem);
 
         @include media(768) {
-          margin-top: 32px;
-          margin-bottom: 32px;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
         }
 
         @include media(420) {
@@ -247,21 +247,21 @@
 
       .subtitle {
         color: $textColor;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         @include fontSet(1.25rem, 700, 1.5rem);
 
         + .desc {
-          margin-bottom: 24px;
+          margin-bottom: 1.5rem;
         }
       }
 
       .date {
         color: $textSecondaryColor;
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
         @include fontSet(0.875rem, 400, 1.3rem);
 
         @include media(768) {
-          margin-bottom: 8px;
+          margin-bottom: .5rem;
         }
       }
 
@@ -270,21 +270,21 @@
         @include fontSet(1rem, 400, 1.5rem);
 
         @include media(768) {
-          margin-top: 32px;
+          margin-top: 2rem;
         }
       }
 
       .more {
         &Box {
           background-color: #f8fafc;
-          border-radius: 12px;
-          margin-top: 96px;
-          padding: 16px;
+          border-radius: .75rem;
+          margin-top: 6rem;
+          padding: 1rem;
         }
 
         &Title {
           color: $textColor;
-          margin-bottom: 16px;
+          margin-bottom: 1rem;
           @include fontSet(1rem, 600, 1.25rem);
         }
 
@@ -304,16 +304,16 @@
           }
 
           &:not(:last-child) {
-            margin-right: 16px;
+            margin-right: 1rem;
 
             @include media(640) {
               margin-right: 0;
-              margin-bottom: 16px;
+              margin-bottom: 1rem;
             }
           }
 
           .imgBox {
-            margin-bottom: 12px;
+            margin-bottom: .75rem;
           }
         }
       }
@@ -325,8 +325,8 @@
     .leftBox {
       background-color: $bgSecondaryColor;
       box-sizing: border-box;
-      border-radius: 24px;
-      margin-right: 32px;
+      border-radius: 1.5rem;
+      margin-right: 2rem;
       position: relative;
       padding: 60px 60px 120px;
       width: 55%;
@@ -335,8 +335,8 @@
         align-items: flex-start;
         display: flex;
         justify-content: space-around;
-        margin-bottom: 24px;
-        padding: 24px;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
         width: 100%;
       }
 
@@ -346,7 +346,7 @@
 
       .title {
         color: $primaryColor;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         @include fontSet(2.5rem, 700, 3.75rem);
 
         @include media(768) {
@@ -360,7 +360,7 @@
 
       .desc {
         color: $textColor;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         @include fontSet(1rem, 400, 1.5rem);
       }
 
@@ -409,7 +409,7 @@
 
       .subtitle {
         color: $textColor;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         @include fontSet(1.25rem, 700, 1.5rem);
       }
 
@@ -422,12 +422,12 @@
           align-items: center;
           box-sizing: border-box;
           border: 2px solid $disabledColor;
-          border-radius: 16px;
+          border-radius: 1rem;
           cursor: pointer;
           display: flex;
           justify-content: space-between;
-          margin-bottom: 16px;
-          padding: 22.5px 16px;
+          margin-bottom: 1rem;
+          padding: 22.5px 1rem;
           transition: border-color 0.85s ease;
 
           @include media(520) {
@@ -442,7 +442,7 @@
               &Input {
                 background-color: transparent;
                 border: none;
-                border-radius: 8px;
+                border-radius: .5rem;
                 box-sizing: border-box;
                 height: 100%;
                 position: absolute;
@@ -461,10 +461,10 @@
                 }
 
                 &Box {
-                  border-radius: 8px;
+                  border-radius: .5rem;
                   box-sizing: border-box;
                   background-color: #f1f5f9;
-                  margin-top: 8px;
+                  margin-top: .5rem;
                   height: 60px;
                   position: relative;
                   width: 100%;
@@ -502,7 +502,7 @@
           }
 
           .amount {
-            margin-left: 8px;
+            margin-left: .5rem;
             @include fontSet(1.5rem, 700, 2.25rem);
 
             &Box {
@@ -513,7 +513,7 @@
 
           .personBox {
             color: $textSecondaryColor;
-            padding: 0 0 0 24px;
+            padding: 0 0 0 1.5rem;
             @include fontSet(0.875rem, 400, 1.3rem);
           }
         }
@@ -525,11 +525,11 @@
           color: #fff;
           display: flex;
           justify-content: center;
-          padding: 24px 0;
+          padding: 1.5rem 0;
           @include fontSet(1rem, 600, 1.1rem);
 
           &Box {
-            margin-top: 16px;
+            margin-top: 1rem;
           }
 
           .loading {
@@ -551,18 +551,18 @@
 
         .feedback {
           color: $textColor;
-          margin-bottom: 32px;
+          margin-bottom: 2rem;
           @include fontSet(1.75rem, 700, 2rem);
         }
 
         .donateBtn {
           &Box {
-            margin-top: 32px;
+            margin-top: 2rem;
           }
           background-color: #f1f5f9;
           border-radius: 500px;
           color: $textColor;
-          padding: 16px 96px;
+          padding: 1rem 6rem;
           @include fontSet(1rem, 600, 1rem);
         }
 
@@ -605,13 +605,13 @@
   &Box[data-module-name="service"] {
     .leftBox {
       background-color: #e3f8ff;
-      border-radius: 8px;
+      border-radius: .5rem;
       padding: 60px 0 0;
 
       @include media(768) {
         align-items: center;
         justify-content: space-between;
-        padding: 24px;
+        padding: 1.5rem;
       }
 
       .title {
@@ -674,7 +674,7 @@
 
   &Box {
     border-radius: 50%;
-    height: 16px;
+    height: 1rem;
     scale: var(--scale);
     opacity: 0;
     position: absolute;
@@ -682,7 +682,7 @@
     rotate: 10deg;
     translate: var(--x) var(--y);
     transition: translate var(--delay) ease-out, scale 0.4s, opacity 0.4s;
-    width: 16px;
+    width: 1rem;
 
     &.hover {
       &:first-of-type {
@@ -790,7 +790,7 @@ body {
   height: 100px;
   justify-content: space-between;
   position: fixed;
-  padding: 28px 48px;
+  padding: 1.75rem 3rem;
   top: 0;
   left: 0;
   width: 100%;
@@ -798,7 +798,7 @@ body {
 
   @include media(520) {
     height: 56px;
-    padding: 0 16px;
+    padding: 0 1rem;
   }
 
   .logoBox {
@@ -808,7 +808,7 @@ body {
 
     img {
       @include media(520) {
-        height: 28px;
+        height: 1.75rem;
         width: 34px;
       }
     }
@@ -818,7 +818,7 @@ body {
       font-size: 1.5rem;
       font-weight: 700;
       line-height: 1.5;
-      margin-left: 8px;
+      margin-left: .5rem;
 
       @include media(640) {
         font-size: 1.25rem;
@@ -836,8 +836,8 @@ body {
       display: flex;
 
       li {
-        padding: 8px;
-        margin: 0 16px;
+        padding: .5rem;
+        margin: 0 1rem;
 
         a {
           color: $textColor;
@@ -881,7 +881,7 @@ body {
         }
 
         &:not(:last-child) {
-          margin-right: 16px;
+          margin-right: 1rem;
         }
       }
     }
@@ -900,7 +900,7 @@ body {
     -webkit-background-clip: text;
     color: transparent;
     letter-spacing: 2px;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     text-align: center;
     @include fontSet(6rem, 400, 6.3rem);
     @extend %fontMantou;
@@ -908,7 +908,7 @@ body {
 
     @include media(768) {
       max-width: 320px;
-      margin: 0 auto 16px;
+      margin: 0 auto 1rem;
       @include fontSet(3.25rem, 400, 3.375rem);
     }
   }
@@ -934,10 +934,10 @@ body {
 
     .titleName {
       background-color: $textColor;
-      border-radius: 16px;
+      border-radius: 1rem;
       color: #fff;
       height: fit-content;
-      padding: 12px 16px;
+      padding: .75rem 1rem;
       @include fontSet(1.75rem, 700, 2rem);
 
       @include media(768) {
@@ -948,15 +948,15 @@ body {
     .nameBox {
       align-items: center;
       border: 1px solid #fff;
-      border-radius: 16px;
-      box-shadow: 0px 4px 12px 0px #a3b4cb33;
+      border-radius: 1rem;
+      box-shadow: 0px 4px .75rem 0px #a3b4cb33;
       display: flex;
-      margin-left: 16px;
-      padding: 16px;
+      margin-left: 1rem;
+      padding: 1rem;
 
       @include media(768) {
         margin-left: 0;
-        padding: 12px 16px;
+        padding: .75rem 1rem;
       }
 
       .no {
@@ -967,7 +967,7 @@ body {
         font-weight: 900;
         height: 50px;
         justify-content: center;
-        margin-right: 16px;
+        margin-right: 1rem;
         width: 50px;
         @include fontSet(2rem, 900, 3rem);
         @extend %mainGradient;
@@ -1043,10 +1043,10 @@ body {
     ul {
       align-items: center;
       background-color: #fff;
-      border-radius: 12px;
+      border-radius: .75rem;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
       display: flex;
-      padding: 10px 40px;
+      padding: 10px 2.5rem;
 
       li {
         position: relative;
@@ -1073,7 +1073,7 @@ body {
         }
 
         &:not(:last-child) {
-          margin-right: 16px;
+          margin-right: 1rem;
         }
       }
     }
@@ -1116,11 +1116,11 @@ body {
   padding: 105px 0;
 
   @include media(768) {
-    padding: 64px 0;
+    padding: 4rem 0;
   }
 
   &Box {
-    border-radius: 40px;
+    border-radius: 2.5rem;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     overflow: hidden;
@@ -1139,10 +1139,10 @@ body {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 64px 40px;
+    padding: 4rem 2.5rem;
 
     @include media(520) {
-      padding: 40px 20px;
+      padding: 2.5rem 20px;
     }
   }
 
@@ -1162,7 +1162,7 @@ body {
 
   &Title {
     color: $textColor;
-    margin-top: 32px;
+    margin-top: 2rem;
     @include fontSet(1.75rem, 700, 2.1rem);
 
     @include media(520) {
@@ -1177,24 +1177,24 @@ body {
 
   &Content {
     color: $textColor;
-    margin-top: 32px;
+    margin-top: 2rem;
     @include fontSet(1.125rem, 400, 1.8rem);
   }
 }
 
 .news {
-  padding: 104px 0;
+  padding: 6.5rem 0;
 
   @include media(768) {
-    padding: 64px 0;
+    padding: 4rem 0;
   }
 
   .titleBox {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 4rem;
 
     @include media(768) {
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
     }
 
     .blockTitle {
@@ -1204,7 +1204,7 @@ body {
 
   &Box {
     display: flex;
-    column-gap: 24px;
+    column-gap: 1.5rem;
 
     @include media(768) {
       display: block;
@@ -1220,7 +1220,7 @@ body {
   }
 
   &Img {
-    border-radius: 16px;
+    border-radius: 1rem;
     font-size: 0;
     overflow: hidden;
 
@@ -1235,7 +1235,7 @@ body {
   }
 
   &Info {
-    margin-top: 16px;
+    margin-top: 1rem;
 
     .date {
       color: $textSecondaryColor;
@@ -1244,13 +1244,13 @@ body {
 
     .title {
       color: $textColor;
-      margin-top: 8px;
+      margin-top: .5rem;
       @include fontSet(1.25rem, 700, 1.5rem);
     }
 
     .desc {
       color: $textColor;
-      margin-top: 8px;
+      margin-top: .5rem;
       @include fontSet(1rem, 400, 1.5rem);
       @include maxLine(2);
     }
@@ -1287,12 +1287,12 @@ body {
 
   .rightBox {
     @include media(768) {
-      margin-top: 24px;
+      margin-top: 1.5rem;
     }
 
     .newsItem {
       display: flex;
-      margin-bottom: 24px;
+      margin-bottom: 1.5rem;
 
       .newsImg {
         max-width: 200px;
@@ -1310,7 +1310,7 @@ body {
 
       .newsInfo {
         margin-top: 0;
-        padding-left: 16px;
+        padding-left: 1rem;
 
         .title {
           @include fontSet(1rem, 700, 1.1875rem);
@@ -1323,15 +1323,15 @@ body {
 
 .policy {
   background-color: $bgColor;
-  padding: 104px 0;
+  padding: 6.5rem 0;
 
   @include media(768) {
-    padding: 64px 0;
+    padding: 4rem 0;
   }
 
   .titleBox {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 4rem;
 
     .blockTitle {
       margin: auto;
@@ -1341,12 +1341,12 @@ body {
   &List {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 64px;
+    column-gap: 4rem;
 
     @include media(768) {
-      column-gap: 24px;
+      column-gap: 1.5rem;
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 64px;
+      row-gap: 4rem;
     }
 
     @include media(740) {
@@ -1375,14 +1375,14 @@ body {
 
   &Info {
     color: $textColor;
-    margin-bottom: 16px;
-    padding: 0 16px;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
     @include fontSet(1.5rem, 700, 2.25rem);
     @extend %ts;
   }
 
   &Img {
-    border-radius: 24px;
+    border-radius: 1.5rem;
     overflow: hidden;
 
     img {
@@ -1392,7 +1392,7 @@ body {
 }
 
 .other {
-  padding: 104px 0;
+  padding: 6.5rem 0;
 
   @include media(768) {
     padding: 60px 0;
@@ -1401,7 +1401,7 @@ body {
   &Box {
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    column-gap: 24px;
+    column-gap: 1.5rem;
 
     @include media(768) {
       display: flex;
@@ -1413,18 +1413,18 @@ body {
     }
 
     > * {
-      border-radius: 32px;
+      border-radius: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 96px;
+      padding: 6rem;
 
       @include media(1280) {
         padding: 70px;
       }
 
       @include media(768) {
-        padding: 40px 24px;
+        padding: 2.5rem 1.5rem;
         width: calc(100% / 2);
       }
 
@@ -1444,7 +1444,7 @@ body {
     color: #fff;
 
     @include media(768) {
-      margin-bottom: 24px;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -1458,7 +1458,7 @@ body {
   }
 
   &Title {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     @include fontSet(3.25rem, 400, 4.6rem);
     @extend %fontMantou;
 
@@ -1477,13 +1477,13 @@ body {
     margin-right: 50px;
 
     @include media(768) {
-      margin-right: 8px;
+      margin-right: .5rem;
     }
 
     &Box {
       align-items: flex-end;
       display: flex;
-      margin-top: 24px;
+      margin-top: 1.5rem;
 
       @include media(768) {
         justify-content: space-between;
@@ -1511,7 +1511,7 @@ body {
 }
 
 .slogan {
-  padding: 104px 0;
+  padding: 6.5rem 0;
 
   &Box {
     align-items: center;
@@ -1532,16 +1532,16 @@ body {
   .nameBox {
     align-items: center;
     border: 1px solid #fff;
-    border-radius: 16px;
-    box-shadow: 0px 4px 12px 0px #a3b4cb33;
+    border-radius: 1rem;
+    box-shadow: 0px 4px .75rem 0px #a3b4cb33;
     display: flex;
-    margin-top: 16px;
-    padding: 16px;
+    margin-top: 1rem;
+    padding: 1rem;
     width: fit-content;
 
     @include media(768) {
       box-shadow: none;
-      margin-top: 24px;
+      margin-top: 1.5rem;
     }
 
     .no {
@@ -1552,7 +1552,7 @@ body {
       font-weight: 900;
       height: 50px;
       justify-content: center;
-      margin-right: 16px;
+      margin-right: 1rem;
       width: 50px;
       @include fontSet(2rem, 900, 3rem);
       @extend %mainGradient;
@@ -1575,10 +1575,10 @@ body {
 
 .footer {
   background-color: $bgSecondaryColor;
-  padding: 64px 0;
+  padding: 4rem 0;
 
   @include media(768) {
-    padding: 64px 36px;
+    padding: 4rem 2.25rem;
   }
 
   @include media(520) {
@@ -1613,10 +1613,10 @@ body {
       border-radius: 50%;
       color: #fff;
       display: flex;
-      height: 32px;
+      height: 2rem;
       justify-content: center;
-      margin-right: 8px;
-      width: 32px;
+      margin-right: .5rem;
+      width: 2rem;
       @include fontSet(1.25rem, 900, 1.875rem);
       @extend %mainGradient;
     }
@@ -1628,7 +1628,7 @@ body {
   }
 
   .mediaBox {
-    margin-top: 16px;
+    margin-top: 1rem;
 
     ul {
       align-items: center;
@@ -1636,7 +1636,7 @@ body {
 
       li {
         &:not(:last-child) {
-          margin-right: 8px;
+          margin-right: .5rem;
         }
       }
 
@@ -1645,10 +1645,10 @@ body {
         background-color: #fff;
         border-radius: 50%;
         display: flex;
-        height: 48px;
+        height: 3rem;
         justify-content: center;
         position: relative;
-        width: 48px;
+        width: 3rem;
 
         @include hover {
           @include after {
@@ -1670,8 +1670,8 @@ body {
         }
 
         img {
-          height: 28px;
-          width: 28px;
+          height: 1.75rem;
+          width: 1.75rem;
           object-fit: contain;
           position: relative;
           z-index: 3;
@@ -1682,13 +1682,13 @@ body {
 
   .copyRight {
     color: $textColor;
-    margin-top: 16px;
+    margin-top: 1rem;
     @include fontSet(0.875rem, 400, 1.3rem);
   }
 
   .rightBox {
     @include media(768) {
-      margin-top: 24px;
+      margin-top: 1.5rem;
     }
 
     .title {
@@ -1696,7 +1696,7 @@ body {
       @include fontSet(1.5rem, 700, 2rem);
 
       @include media(768) {
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
       }
     }
 
@@ -1713,7 +1713,7 @@ body {
 
     label {
       color: $textColor;
-      margin-bottom: 8px;
+      margin-bottom: .5rem;
       @include fontSet(1.25rem, 700, 1.5rem);
     }
 
@@ -1721,9 +1721,9 @@ body {
     textarea {
       background-color: $inputBgColor;
       border: none;
-      border-radius: 8px;
-      margin-bottom: 24px;
-      padding: 16px;
+      border-radius: .5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
 
       &:focus {
         outline-color: rgba($textColor, 0.35);
@@ -1749,7 +1749,7 @@ body {
     color: #fff;
     display: flex;
     justify-content: center;
-    padding: 24px 0;
+    padding: 1.5rem 0;
     width: 100%;
     @include fontSet(1rem, 600, 1.1rem);
   }
@@ -1780,7 +1780,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 12px 0;
+    padding: .75rem 0;
 
     img {
       height: 20px;
