@@ -60,7 +60,6 @@
         direction="1"
         mode="normal"
         loop
-        autoplay
       ></lottie-player>
     </div>
 
@@ -212,7 +211,7 @@
         </div>
       </section>
 
-      <section class="marquee">
+      <section id="marquee" class="marquee">
         <p>為喵星人，護台灣！從喵的眼中，看見台灣 喵的未來，人的希望</p>
       </section>
 
@@ -877,8 +876,10 @@
       Number.prototype.addComma = function () {
         return this.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
       };
-
       const apiURLBase = "https://2023f2e-week1-server.vercel.app/";
+
+      const catSound = new Audio("./assets/cat1a.mp3");
+      catSound.volume = 0.6;
 
       //lenis
       let lenis = null;
@@ -895,21 +896,36 @@
         const bodyDom = document.querySelector("body");
         const loadingBox = document.querySelector(".loadingBox");
         const loading = document.querySelector("#loading");
+        const marquee = document.querySelector("#marquee");
 
         function finishLoading() {
           bodyDom.classList.remove("isLoading");
-          loadingBox.remove();
+          //loadingBox.remove();
+          gsap.to('.loadingBox', {
+            scale: 0,
+            duration: 0.5,
+            ease: 'power4.out',
+            onComplete: () => loadingBox.remove()
+          })
           lenisInit();
           setTimeout(() => {
             bannerTimeLine.play();
+            marquee.classList.add("play");
           }, 400);
         }
 
         if (session && session.getItem("loading") === "true") {
           finishLoading();
         } else {
+          
+          loading.addEventListener("ready", (e) => {
+            setTimeout(() => {
+              loading.play();
+            }, 100);
+          });
+
           loading.addEventListener("complete", () => {
-            finishLoading();
+            finishLoading();            
           });
           session.setItem("loading", "true");
         }
@@ -1017,6 +1033,22 @@
 
       // gsap
       function gsapInit() {
+        const headerTimeLine = gsap.timeline({ paused: true });
+        headerTimeLine.to('.header', 
+          {left: '2.5%', top: '2.5%', width: '95%', opacity: 0.95, borderRadius: 30, duration: 0.75, ease: 'power4.out'}
+        )
+
+        ScrollTrigger.create({
+          trigger: ".advocateBox",
+          start: "top top",
+          onEnter: () => {
+            headerTimeLine.play();
+          },
+          onLeaveBack: () => {
+            headerTimeLine.reverse();
+          },
+        });
+        
         bannerTimeLine
           .from(".banner h1", {
             opacity: 0,
@@ -1118,7 +1150,7 @@
           scale: 0,
           opacity: 0,
           duration: 1.2,
-          ease: "back.out(1.7)",
+          ease: "power4.out",
         });
 
         ScrollTrigger.create({
@@ -1137,17 +1169,22 @@
             duration: 1.2,
             ease: "power4.out",
           })
+          .from(".sloganBox .nameBox", {
+            opacity: 0,
+            duration: 0.8,
+            ease: "power4.out",
+          }, "-=0.9")
           .from(".sloganBox .no", {
             opacity: 0,
             scale: 0,
             duration: 1.2,
-            ease: "back.out(1.7)",
-          }, "-=0.8")
+            ease: "power4.out",
+          }, "-=0.9")
           .from(".sloganBox .name", {
             opacity: 0,
             duration: 0.8,
             ease: "power4.out",
-          }, "-=0.8");
+          }, "-=0.9");
 
         ScrollTrigger.create({
           trigger: ".sloganBox",
@@ -1300,6 +1337,7 @@
                 this.totalCallback(data);
                 const outerBox = this.submitDom.closest(".moduleBox");
                 outerBox.dataset.status = "after";
+                catSound.play();
               })
               .catch((err) => {
                 Swal.fire({
@@ -1434,6 +1472,7 @@
           this.finishDom.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
+            catSound.play();
             const outerBox = this.finishDom.closest(".moduleBox");
             outerBox.dataset.status = "before";
             this.form.reset();

@@ -816,6 +816,7 @@ body.isLoading {
   justify-content: center;
   height: 100%;
   position: fixed;
+  transform-origin: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -1181,9 +1182,13 @@ body.isLoading {
     animation-play-state: paused;
   }
 }
+.marquee.play p {
+  animation-play-state: running;
+}
 .marquee p {
   white-space: nowrap;
   animation: marquee 30s linear infinite;
+  animation-play-state: paused;
 }
 
 .advocate {

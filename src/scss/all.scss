@@ -746,6 +746,7 @@ body {
   justify-content: center;
   height: 100%;
   position: fixed;
+  transform-origin: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -1097,9 +1098,16 @@ body {
     }
   }
 
+  &.play{
+    p {
+      animation-play-state: running;
+    }
+  }
+
   p {
     white-space: nowrap;
     animation: marquee 30s linear infinite;
+    animation-play-state: paused;
   }
 }
 
