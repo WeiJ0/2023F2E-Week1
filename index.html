@@ -878,6 +878,7 @@
       };
       const apiURLBase = "https://2023f2e-week1-server.vercel.app/";
 
+      // cat sound effect
       const catSound = new Audio("./assets/cat1a.mp3");
       catSound.volume = 0.6;
 
@@ -887,7 +888,7 @@
         lenis = new Lenis();
         lenis.on("scroll", ScrollTrigger.update);
         gsap.ticker.add((time) => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
+        gsap.ticker.lagSmoothing(0);        
       }
 
       //loading
@@ -900,35 +901,41 @@
 
         function finishLoading() {
           bodyDom.classList.remove("isLoading");
-          //loadingBox.remove();
-          gsap.to('.loadingBox', {
+          lenisInit();
+          lenis.scrollTo(0, { immediate: true });
+          gsap.to(".loadingBox", {
             scale: 0,
             duration: 0.5,
-            ease: 'power4.out',
-            onComplete: () => loadingBox.remove()
-          })
-          lenisInit();
+            ease: "power4.out",
+            onComplete: () => loadingBox.remove(),
+          });
           setTimeout(() => {
             bannerTimeLine.play();
             marquee.classList.add("play");
           }, 400);
         }
 
-        if (session && session.getItem("loading") === "true") {
-          finishLoading();
-        } else {
-          
-          loading.addEventListener("ready", (e) => {
-            setTimeout(() => {
+        function playLoading(){
+          setTimeout(() => {
               loading.play();
-            }, 100);
-          });
+          }, 100);
+        }
 
-          loading.addEventListener("complete", () => {
-            finishLoading();            
+        // first loading play three times & set session
+        // other play once 
+        if (session && session.getItem("loading") === "true") {
+          loading.setLooping(false);
+          playLoading()
+        } else {
+          loading.addEventListener("ready", (e) => {
+            playLoading()
           });
           session.setItem("loading", "true");
         }
+
+        loading.addEventListener("complete", () => {
+          finishLoading();
+        });
       })();
 
       //mouse
@@ -1007,7 +1014,9 @@
       menus.forEach((menu) => {
         menu.addEventListener("click", (e) => {
           e.preventDefault();
-          lenis.scrollTo(menu.getAttribute("href"), { offset: -100 });
+          const section = menu.getAttribute("href");
+          const offset = ['#donate', '#service'].includes(section) ? -200 : -100;
+          lenis.scrollTo(section, { offset });
         });
       });
 
@@ -1034,9 +1043,15 @@
       // gsap
       function gsapInit() {
         const headerTimeLine = gsap.timeline({ paused: true });
-        headerTimeLine.to('.header', 
-          {left: '2.5%', top: '2.5%', width: '95%', opacity: 0.95, borderRadius: 30, duration: 0.75, ease: 'power4.out'}
-        )
+        headerTimeLine.to(".header", {
+          left: "2.5%",
+          top: "2.5%",
+          width: "95%",
+          opacity: 0.95,
+          borderRadius: 30,
+          duration: 0.75,
+          ease: "power4.out",
+        });
 
         ScrollTrigger.create({
           trigger: ".advocateBox",
@@ -1048,7 +1063,7 @@
             headerTimeLine.reverse();
           },
         });
-        
+
         bannerTimeLine
           .from(".banner h1", {
             opacity: 0,
@@ -1056,25 +1071,29 @@
             duration: 0.85,
             ease: "power4.out",
           })
-          .from(".banner .titleName", {
-            opacity: 0,
-            duration: 0.85,
-            ease: "power4.out",
-          })
+          .from(
+            ".banner .titleName",
+            {
+              opacity: 0,
+              duration: 0.85,
+              ease: "power4.out",
+            },
+            "-=0.6"
+          )
           .from(
             ".banner .nameBox",
             { opacity: 0, duration: 0.85, ease: "power4.out" },
-            "-=0.5"
+            "-=0.6"
           )
           .from(
             ".banner .bannerBg",
             { opacity: 0, duration: 0.85, ease: "power4.out" },
-            "-=0.25"
+            "-=0.6"
           )
           .from(
             ".banner .person",
-            { opacity: 0, y: 20, duration: 0.85, ease: "power4.out" },
-            "-=0.25"
+            { opacity: 0, y: 20, duration: 1, ease: "power4.out" },
+            "-=0.65"
           )
           .to(
             ".banner svg path.cloud",
@@ -1085,6 +1104,7 @@
               repeatDelay: 0.2,
               repeat: -1,
               yoyo: true,
+              stagger: 0.1,
             },
             "<"
           );
@@ -1169,22 +1189,34 @@
             duration: 1.2,
             ease: "power4.out",
           })
-          .from(".sloganBox .nameBox", {
-            opacity: 0,
-            duration: 0.8,
-            ease: "power4.out",
-          }, "-=0.9")
-          .from(".sloganBox .no", {
-            opacity: 0,
-            scale: 0,
-            duration: 1.2,
-            ease: "power4.out",
-          }, "-=0.9")
-          .from(".sloganBox .name", {
-            opacity: 0,
-            duration: 0.8,
-            ease: "power4.out",
-          }, "-=0.9");
+          .from(
+            ".sloganBox .nameBox",
+            {
+              opacity: 0,
+              duration: 0.8,
+              ease: "power4.out",
+            },
+            "-=0.9"
+          )
+          .from(
+            ".sloganBox .no",
+            {
+              opacity: 0,
+              scale: 0,
+              duration: 1.2,
+              ease: "power4.out",
+            },
+            "-=0.9"
+          )
+          .from(
+            ".sloganBox .name",
+            {
+              opacity: 0,
+              duration: 0.8,
+              ease: "power4.out",
+            },
+            "-=0.9"
+          );
 
         ScrollTrigger.create({
           trigger: ".sloganBox",
